@@ -1,0 +1,19 @@
+payload:
+  - PROCESS-NAME-REGEX,discord
+  - PROCESS-NAME-REGEX,vesktop
+  - PROCESS-NAME,Discord.exe
+  - PROCESS-NAME,Discord
+  - PROCESS-NAME,discord
+  - PROCESS-NAME,com.discord
+  - PROCESS-NAME,com.google.android.youtube
+  - PROCESS-NAME,com.google.android.apps.youtube.music
+  - DOMAIN-SUFFIX,discord.com
+  - DOMAIN-SUFFIX,discord.gg
+  - DOMAIN-SUFFIX,discordapp.com
+  - DOMAIN-SUFFIX,discordapp.net
+  - DOMAIN-SUFFIX,discord.media
+  - DOMAIN-SUFFIX,googlevideo.com
+  - DOMAIN-SUFFIX,youtu.be
+  - DOMAIN-SUFFIX,youtube.com
+  - DOMAIN-SUFFIX,youtubei.googleapis.com
+  - DOMAIN-SUFFIX,ytimg.com

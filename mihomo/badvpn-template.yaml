@@ -1,0 +1,735 @@
+# BadVPN Mihomo template.
+# Secrets are intentionally not defined here. Keep authentication in the panel/base config.
+{% set badvpn_ruleset_base_url = conf.badvpn_ruleset_base_url | default("https://raw.githubusercontent.com/Rerowros/badvpn-routing/refs/heads/main/rulesets") %}
+
+mode: rule
+ipv6: false
+log-level: info
+allow-lan: false
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: always
+
+geodata-mode: true
+geo-auto-update: true
+geo-update-interval: 72
+geox-url:
+  geoip: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+  geosite: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
+
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack: [any:53]
+  auto-route: true
+  auto-detect-interface: true
+  strict-route: true
+  route-exclude-address:
+    - 224.0.0.0/3
+    - 10.0.0.0/8
+    - 127.0.0.0/8
+    - 100.64.0.0/10
+    - 172.16.0.0/12
+    - 169.254.0.0/16
+    - 192.168.0.0/16
+    - 192.0.0.0/24
+    - 192.0.2.0/24
+    - 192.88.99.0/24
+    - 198.51.100.0/24
+    - 203.0.113.0/24
+    - fc00::/7
+    - ff00::/8
+    - fe80::/10
+    - ::/127
+
+dns:
+  enable: true
+  listen: :1053
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  respect-rules: true
+  use-hosts: true
+  use-system-hosts: true
+  prefer-h3: false
+  fake-ip-filter:
+    - "rule-set:private-domains"
+    - "rule-set:category-ru"
+    - "*.lan"
+    - "*.local"
+    - "+.ntp.org"
+    - "+.pool.ntp.org"
+    - "time.windows.com"
+    - "time.apple.com"
+    - "time.nist.gov"
+    - "connectivitycheck.gstatic.com"
+    - "detectportal.firefox.com"
+    - "msftconnecttest.com"
+    - "+.msftncsi.com"
+    - "+.ru"
+    - "+.su"
+    - "+.xn--p1ai"
+    - "+.badvpn.pro"
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+    - 77.88.8.8
+  proxy-server-nameserver:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+  direct-nameserver:
+    - https://common.dot.dns.yandex.net/dns-query
+    - https://1.1.1.1/dns-query
+  nameserver-policy:
+    '+.badvpn.pro': ['https://1.1.1.1/dns-query']
+    '+.ru': ['https://common.dot.dns.yandex.net/dns-query', 'https://1.1.1.1/dns-query']
+    '+.su': ['https://common.dot.dns.yandex.net/dns-query', 'https://1.1.1.1/dns-query']
+    '+.xn--p1ai': ['https://common.dot.dns.yandex.net/dns-query', 'https://1.1.1.1/dns-query']
+  nameserver:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+
+sniffer:
+  enable: true
+  override-destination: true
+  parse-pure-ip: true
+  force-domain:
+    - "+"
+  skip-domain:
+    - "+.push.apple.com"
+    - "+.apple.com"
+  skip-dst-address:
+    - 224.0.0.0/3
+    - 10.0.0.0/8
+    - 127.0.0.0/8
+    - 100.64.0.0/10
+    - 172.16.0.0/12
+    - 198.18.0.0/15
+    - 169.254.0.0/16
+    - 192.168.0.0/16
+    - 192.0.0.0/24
+    - 192.0.2.0/24
+    - 192.88.99.0/24
+    - 198.51.100.0/24
+    - 203.0.113.0/24
+    - fc00::/7
+    - ff00::/8
+    - fe80::/10
+    - ::/127
+  sniff:
+    HTTP: { ports: [80, 8080-8880] }
+    TLS: { ports: [443, 8443] }
+    QUIC: { ports: [443, 8443] }
+
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+{{ conf | except("proxy-groups", "port", "mode", "rules", "ipv6", "log-level", "allow-lan", "unified-delay", "tcp-concurrent", "find-process-mode", "geodata-mode", "geo-auto-update", "geo-update-interval", "geox-url", "tun", "dns", "sniffer", "profile", "mixed-port", "badvpn_ruleset_base_url") | yaml }}
+
+proxy-groups:
+
+  {% set groups = namespace(us=false, se=false, ch=false, nl=false, de=false, hu=false, tr=false, ai=false, auto=false, whitelist=false, spb=false) %}
+  {% for p in conf.proxies %}
+  {% if "🇺🇸" in p.name or "USA" in p.name or "США" in p.name %}{% set groups.us = true %}{% endif %}
+  {% if "🇸🇪" in p.name or "Sweden" in p.name or "Швеция" in p.name %}{% set groups.se = true %}{% endif %}
+  {% if "🇨🇭" in p.name or "Switzerland" in p.name or "Swiss" in p.name or "Швейцария" in p.name or "Bern" in p.name or "Берн" in p.name %}{% set groups.ch = true %}{% endif %}
+  {% if "🇳🇱" in p.name or "Netherlands" in p.name or "Нидерланды" in p.name or "NL" in p.name %}{% set groups.nl = true %}{% endif %}
+  {% if "🇩🇪" in p.name or "Germany" in p.name or "Германия" in p.name %}{% set groups.de = true %}{% endif %}
+  {% if "🇭🇺" in p.name or "Hungary" in p.name or "Венгрия" in p.name %}{% set groups.hu = true %}{% endif %}
+  {% if "🇹🇷" in p.name or "Turkey" in p.name or "Турция" in p.name %}{% set groups.tr = true %}{% endif %}
+  {% if "SPB" in p.name %}{% set groups.spb = true %}{% endif %}
+  {% if "БЕЛЫЕ" in p.name or "->" in p.name or "LTE" in p.name or "BadVPN доступ" in p.name %}{% set groups.whitelist = true %}{% endif %}
+  {% if (("🇺🇸" in p.name or "USA" in p.name or "США" in p.name or "🇨🇭" in p.name or "Switzerland" in p.name or "Swiss" in p.name or "Швейцария" in p.name or "Bern" in p.name or "Берн" in p.name or "🇩🇪" in p.name or "Germany" in p.name or "Германия" in p.name or "🇭🇺" in p.name or "Hungary" in p.name or "Венгрия" in p.name or "🇹🇷" in p.name or "Turkey" in p.name or "Турция" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name) %}{% set groups.ai = true %}{% endif %}
+  {% if "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "BadVPN доступ" not in p.name and "SPB" not in p.name and "❌" not in p.name and "💳" not in p.name and "@BPN" not in p.name and "->" not in p.name and "🇳🇱" not in p.name and "🇷🇴" not in p.name and "🇫🇮" not in p.name and "Finland" not in p.name and "Финляндия" not in p.name and "XHTTP" not in p.name %}{% set groups.auto = true %}{% endif %}
+  {% endfor %}
+
+  - name: "Выбор сервера"
+    type: select
+    proxies:
+      - "⚡ Авто (рекомендуется)"
+      - "🛡 Режим белых списков (БПЛА)"
+      {% if groups.us %}- "🇺🇸 США (все серверы)"
+      {% endif %}{% if groups.se %}- "🇸🇪 Швеция (все серверы)"
+      {% endif %}{% if groups.ch %}- "🇨🇭 Швейцария (все серверы)"
+      {% endif %}{% if groups.nl %}- "🇳🇱 Нидерланды (все серверы)"
+      {% endif %}{% if groups.de %}- "🇩🇪 Германия (все серверы)"
+      {% endif %}{% if groups.hu %}- "🇭🇺 Венгрия (все серверы)"
+      {% endif %}{% if groups.tr %}- "🇹🇷 Турция (все серверы)"
+      {% endif %}- "🚫 Без VPN"
+
+  - name: "🚫 Без VPN"
+    type: select
+    proxies:
+      - DIRECT
+
+  - name: "🎮 Игры"
+    type: select
+    proxies:
+      - "🚫 Без VPN"
+      - "Выбор сервера"
+      - "⚡ Авто (рекомендуется)"
+
+  - name: "⚡ Авто (рекомендуется)"
+    type: fallback
+    url: "http://www.gstatic.com/generate_204"
+    interval: 120
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    lazy: false
+    proxies:
+      - "⚙️ Обычные серверы"
+      - "🛡 Режим белых списков (БПЛА)"
+
+  - name: "📺 YouTube и Discord"
+    type: fallback
+    url: "http://www.gstatic.com/generate_204"
+    interval: 60
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    lazy: false
+    hidden: true
+    proxies:
+      {% if groups.spb %}{% for p in conf.proxies %}{% if "SPB" in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% endif %}- "⚡ Авто (рекомендуется)"
+
+  - name: "🤖 AI"
+    type: fallback
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    lazy: false
+    hidden: true
+    proxies:
+      {% if groups.ai %}{% for p in conf.proxies %}{% if ("🇺🇸" in p.name or "USA" in p.name or "США" in p.name or "🇨🇭" in p.name or "Switzerland" in p.name or "Swiss" in p.name or "Швейцария" in p.name or "Bern" in p.name or "Берн" in p.name or "🇩🇪" in p.name or "Germany" in p.name or "Германия" in p.name or "🇭🇺" in p.name or "Hungary" in p.name or "Венгрия" in p.name or "🇹🇷" in p.name or "Turkey" in p.name or "Турция" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% endif %}- "⚡ Авто (рекомендуется)"
+
+  - name: "⚙️ Обычные серверы"
+    type: url-test
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    lazy: false
+    hidden: true
+    proxies:
+      {% if groups.auto %}{% for p in conf.proxies %}{% if "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "BadVPN доступ" not in p.name and "SPB" not in p.name and "❌" not in p.name and "💳" not in p.name and "@BPN" not in p.name and "->" not in p.name and "🇳🇱" not in p.name and "🇷🇴" not in p.name and "🇫🇮" not in p.name and "Finland" not in p.name and "Финляндия" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% elif groups.whitelist %}{% for p in conf.proxies %}{% if "БЕЛЫЕ" in p.name or "->" in p.name or "LTE" in p.name or "BadVPN доступ" in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% else %}- DIRECT
+      {% endif %}
+
+  {% if groups.se %}- name: "🇸🇪 Швеция (все серверы)"
+    type: fallback
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    proxies:
+      {% for p in conf.proxies %}{% if ("🇸🇪" in p.name or "Sweden" in p.name or "Швеция" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}- "⚡ Авто (рекомендуется)"
+  {% endif %}
+
+  {% if groups.ch %}- name: "🇨🇭 Швейцария (все серверы)"
+    type: fallback
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    proxies:
+      {% for p in conf.proxies %}{% if ("🇨🇭" in p.name or "Switzerland" in p.name or "Swiss" in p.name or "Швейцария" in p.name or "Bern" in p.name or "Берн" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}- "⚡ Авто (рекомендуется)"
+  {% endif %}
+
+  {% if groups.nl %}- name: "🇳🇱 Нидерланды (все серверы)"
+    type: fallback
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    proxies:
+      {% for p in conf.proxies %}{% if ("🇳🇱" in p.name or "Netherlands" in p.name or "Нидерланды" in p.name or "NL" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}- "⚡ Авто (рекомендуется)"
+  {% endif %}
+
+  {% if groups.de %}- name: "🇩🇪 Германия (все серверы)"
+    type: fallback
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    proxies:
+      {% for p in conf.proxies %}{% if ("🇩🇪" in p.name or "Germany" in p.name or "Германия" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}- "⚡ Авто (рекомендуется)"
+  {% endif %}
+
+  {% if groups.hu %}- name: "🇭🇺 Венгрия (все серверы)"
+    type: fallback
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    proxies:
+      {% for p in conf.proxies %}{% if ("🇭🇺" in p.name or "Hungary" in p.name or "Венгрия" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}- "⚡ Авто (рекомендуется)"
+  {% endif %}
+
+  {% if groups.us %}- name: "🇺🇸 США (все серверы)"
+    type: fallback
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    proxies:
+      {% for p in conf.proxies %}{% if ("🇺🇸" in p.name or "USA" in p.name or "США" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}- "⚡ Авто (рекомендуется)"
+  {% endif %}
+
+  {% if groups.tr %}- name: "🇹🇷 Турция (все серверы)"
+    type: fallback
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    proxies:
+      {% for p in conf.proxies %}{% if ("🇹🇷" in p.name or "Turkey" in p.name or "Турция" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}- "⚡ Авто (рекомендуется)"
+  {% endif %}
+
+  - name: "🛡 Режим белых списков (БПЛА)"
+    type: fallback
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 204
+    lazy: false
+    proxies:
+      {% if groups.whitelist %}{% for p in conf.proxies %}{% if "БЕЛЫЕ" in p.name or "->" in p.name or "LTE" in p.name or "BadVPN доступ" in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% elif groups.auto %}{% for p in conf.proxies %}{% if "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "BadVPN доступ" not in p.name and "SPB" not in p.name and "❌" not in p.name and "💳" not in p.name and "@BPN" not in p.name and "->" not in p.name and "🇳🇱" not in p.name and "🇷🇴" not in p.name and "🇫🇮" not in p.name and "Finland" not in p.name and "Финляндия" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% else %}- DIRECT
+      {% endif %}
+
+rule-providers:
+  BadVPN-Youtube-Discord:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "{{ badvpn_ruleset_base_url }}/proxy/youtube-discord.yaml"
+    path: ./ruleset/badvpn-youtube-discord.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  BadVPN-AI:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "{{ badvpn_ruleset_base_url }}/proxy/ai.yaml"
+    path: ./ruleset/badvpn-ai.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  BadVPN-Telegram-Extra:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "{{ badvpn_ruleset_base_url }}/proxy/telegram-extra.yaml"
+    path: ./ruleset/badvpn-telegram-extra.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  BadVPN-GitHub-Extra:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "{{ badvpn_ruleset_base_url }}/proxy/github-extra.yaml"
+    path: ./ruleset/badvpn-github-extra.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  BadVPN-Games-Core:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "{{ badvpn_ruleset_base_url }}/games/games-core.yaml"
+    path: ./ruleset/badvpn-games-core.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  BadVPN-RU-Core:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "{{ badvpn_ruleset_base_url }}/direct/ru-core.yaml"
+    path: ./ruleset/badvpn-ru-core.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  BadVPN-Torrents:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "{{ badvpn_ruleset_base_url }}/direct/torrents.yaml"
+    path: ./ruleset/badvpn-torrents.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  DOMAIN-DIRECT-KEYWORD:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/domain-direct-keyword.yaml"
+    path: ./ruleset/domain-direct-keyword.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  DOMAIN-DIRECT-SUFFIX:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/domain-direct-suffix.yaml"
+    path: ./ruleset/domain-direct-suffix.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  PROCESS-DIRECT-APK-WILDCARD:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/process-direct-apk-wildcard.yaml"
+    path: ./ruleset/process-direct-apk-wildcard.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  PROCESS-DIRECT-APK:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/process-direct-apk.yaml"
+    path: ./ruleset/process-direct-apk.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  PROCESS-DIRECT-PC:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/process-direct-pc.yaml"
+    path: ./ruleset/process-direct-pc.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  Nemu-X-WL:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/Nemu-x/privWL-clash/main/clV2_provider.yaml"
+    path: ./ruleset/Nemu-X-WL.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  Nemu-X-TG:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/Nemu-x/privWL-clash/main/tgprx.yaml"
+    path: ./ruleset/Nemu-X-TG.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  Nemu-X-APPS:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/Nemu-x/privWL-clash/main/process-core.yaml"
+    path: ./ruleset/Nemu-X-APPS.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  private-domains:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/private.mrs"
+    path: ./ruleset/geosite-private.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 2592000
+
+  category-ru:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/category-ru.mrs"
+    path: ./ruleset/category-ru.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  hydra-whitelist:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/whitelist.mrs"
+    path: ./ruleset/hydra-whitelist.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  microsoft:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/microsoft.mrs"
+    path: ./ruleset/microsoft.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  apple:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/apple.mrs"
+    path: ./ruleset/apple.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  google-play:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/google-play.mrs"
+    path: ./ruleset/google-play.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  github:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/github.mrs"
+    path: ./ruleset/github.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  youtube:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/youtube.mrs"
+    path: ./ruleset/youtube.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  telegram:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/telegram.mrs"
+    path: ./ruleset/telegram.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  epicgames:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/epicgames.mrs"
+    path: ./ruleset/epicgames.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  origin:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/origin.mrs"
+    path: ./ruleset/origin.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  riot:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/riot.mrs"
+    path: ./ruleset/riot.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  escapefromtarkov:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/escapefromtarkov.mrs"
+    path: ./ruleset/escapefromtarkov.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  steam:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/steam.mrs"
+    path: ./ruleset/steam.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  faceit:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/faceit.mrs"
+    path: ./ruleset/faceit.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  games:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/roscomvpn/custom-category/release/mihomo/games.yaml"
+    path: ./ruleset/games.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  ru-apps:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/roscomvpn/custom-category/release/mihomo/ru-apps.yaml"
+    path: ./ruleset/ru-apps.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  private-ips:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geoip/release/mihomo/private.mrs"
+    path: ./ruleset/geoip-private.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 2592000
+
+  direct-ips:
+    type: http
+    behavior: ipcidr
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geoip/release/mihomo/direct.mrs"
+    path: ./ruleset/direct-ips.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  category-ads:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/category-ads.mrs"
+    path: ./ruleset/category-ads.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  win-spy:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/win-spy.mrs"
+    path: ./ruleset/win-spy.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  torrent-domains:
+    type: http
+    behavior: domain
+    format: mrs
+    url: "https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/torrent.mrs"
+    path: ./ruleset/torrent-domains.mrs
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  torrent-clients:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "https://raw.githubusercontent.com/legiz-ru/mihomo-rule-sets/main/other/torrent-clients.yaml"
+    path: ./ruleset/torrent-clients.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+rules:
+  - RULE-SET,private-ips,DIRECT,no-resolve
+  - GEOIP,private,DIRECT,no-resolve
+  - GEOSITE,private,DIRECT
+  - RULE-SET,private-domains,DIRECT
+
+  # IPv6 disabled in this template; keep accidental IPv6/QUIC from leaking past rules.
+  - IP-CIDR,::/0,REJECT-DROP,no-resolve
+  - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT-DROP
+
+  # Strong direct decisions before proxy exceptions.
+  - RULE-SET,PROCESS-DIRECT-PC,DIRECT
+  - RULE-SET,PROCESS-DIRECT-APK,DIRECT
+  - RULE-SET,PROCESS-DIRECT-APK-WILDCARD,DIRECT
+  - RULE-SET,DOMAIN-DIRECT-KEYWORD,DIRECT
+  - RULE-SET,BadVPN-Torrents,DIRECT
+  - RULE-SET,torrent-clients,DIRECT
+  - RULE-SET,torrent-domains,DIRECT
+
+  # Blocking.
+  - GEOSITE,category-ads-all,REJECT
+  - RULE-SET,category-ads,REJECT
+  - RULE-SET,win-spy,REJECT
+
+  # Dedicated routed products.
+  - RULE-SET,BadVPN-Youtube-Discord,📺 YouTube и Discord
+  - RULE-SET,youtube,📺 YouTube и Discord
+  - GEOSITE,youtube,📺 YouTube и Discord
+  - GEOSITE,discord,📺 YouTube и Discord
+
+  - RULE-SET,BadVPN-AI,🤖 AI
+
+  - RULE-SET,Nemu-X-TG,Выбор сервера
+  - RULE-SET,telegram,Выбор сервера
+  - GEOSITE,telegram,Выбор сервера
+  - RULE-SET,BadVPN-Telegram-Extra,Выбор сервера,no-resolve
+
+  - RULE-SET,github,Выбор сервера
+  - GEOSITE,github,Выбор сервера
+  - RULE-SET,BadVPN-GitHub-Extra,Выбор сервера
+  - RULE-SET,google-play,Выбор сервера
+
+  # Games default to DIRECT through the separate group, but can be switched to VPN in the client UI.
+  - RULE-SET,BadVPN-Games-Core,🎮 Игры
+  - RULE-SET,games,🎮 Игры
+  - RULE-SET,epicgames,🎮 Игры
+  - RULE-SET,origin,🎮 Игры
+  - RULE-SET,riot,🎮 Игры
+  - RULE-SET,escapefromtarkov,🎮 Игры
+  - RULE-SET,steam,🎮 Игры
+  - RULE-SET,faceit,🎮 Игры
+
+  - RULE-SET,Nemu-X-WL,Выбор сервера
+  - RULE-SET,Nemu-X-APPS,Выбор сервера
+
+  # Broad RU direct goes after proxy exceptions so blocked non-critical domains can still be proxied.
+  - RULE-SET,BadVPN-RU-Core,DIRECT
+  - RULE-SET,DOMAIN-DIRECT-SUFFIX,DIRECT
+  - RULE-SET,ru-apps,DIRECT
+  - RULE-SET,microsoft,DIRECT
+  - RULE-SET,apple,DIRECT
+  - RULE-SET,category-ru,DIRECT
+  - RULE-SET,hydra-whitelist,DIRECT
+  - RULE-SET,direct-ips,DIRECT
+  - GEOIP,ru,DIRECT,no-resolve
+
+  - MATCH,Выбор сервера

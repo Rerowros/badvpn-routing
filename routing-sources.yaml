@@ -1,0 +1,269 @@
+sources:
+  badvpn_youtube_discord:
+    provider: BadVPN-Youtube-Discord
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: "📺 YouTube и Discord"
+    path: rulesets/proxy/youtube-discord.yaml
+  badvpn_ai:
+    provider: BadVPN-AI
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: "🤖 AI"
+    path: rulesets/proxy/ai.yaml
+  badvpn_telegram_extra:
+    provider: BadVPN-Telegram-Extra
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: "Выбор сервера"
+    path: rulesets/proxy/telegram-extra.yaml
+  badvpn_github_extra:
+    provider: BadVPN-GitHub-Extra
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: "Выбор сервера"
+    path: rulesets/proxy/github-extra.yaml
+  badvpn_games_core:
+    provider: BadVPN-Games-Core
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: "🎮 Игры"
+    path: rulesets/games/games-core.yaml
+  badvpn_ru_core:
+    provider: BadVPN-RU-Core
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    path: rulesets/direct/ru-core.yaml
+  badvpn_torrents:
+    provider: BadVPN-Torrents
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    path: rulesets/direct/torrents.yaml
+
+  nemu_domain_direct_keyword:
+    provider: DOMAIN-DIRECT-KEYWORD
+    owner: Nemu-x/privWL-clash
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/domain-direct-keyword.yaml
+  nemu_domain_direct_suffix:
+    provider: DOMAIN-DIRECT-SUFFIX
+    owner: Nemu-x/privWL-clash
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/domain-direct-suffix.yaml
+  nemu_process_direct_apk:
+    provider: PROCESS-DIRECT-APK
+    owner: Nemu-x/privWL-clash
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/process-direct-apk.yaml
+  nemu_process_direct_apk_wildcard:
+    provider: PROCESS-DIRECT-APK-WILDCARD
+    owner: Nemu-x/privWL-clash
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/process-direct-apk-wildcard.yaml
+  nemu_process_direct_pc:
+    provider: PROCESS-DIRECT-PC
+    owner: Nemu-x/privWL-clash
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/process-direct-pc.yaml
+  nemu_whitelist:
+    provider: Nemu-X-WL
+    owner: Nemu-x/privWL-clash
+    format: yaml
+    behavior: classical
+    route: "Выбор сервера"
+    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/main/clV2_provider.yaml
+  nemu_telegram:
+    provider: Nemu-X-TG
+    owner: Nemu-x/privWL-clash
+    format: yaml
+    behavior: classical
+    route: "Выбор сервера"
+    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/main/tgprx.yaml
+  nemu_apps:
+    provider: Nemu-X-APPS
+    owner: Nemu-x/privWL-clash
+    format: yaml
+    behavior: classical
+    route: "Выбор сервера"
+    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/main/process-core.yaml
+
+  hydra_private_domains:
+    provider: private-domains
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: DIRECT
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/private.mrs
+  hydra_category_ru:
+    provider: category-ru
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: DIRECT
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/category-ru.mrs
+  hydra_whitelist:
+    provider: hydra-whitelist
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: DIRECT
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/whitelist.mrs
+  hydra_microsoft:
+    provider: microsoft
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: DIRECT
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/microsoft.mrs
+  hydra_apple:
+    provider: apple
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: DIRECT
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/apple.mrs
+  hydra_google_play:
+    provider: google-play
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: "Выбор сервера"
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/google-play.mrs
+  hydra_github:
+    provider: github
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: "Выбор сервера"
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/github.mrs
+  hydra_youtube:
+    provider: youtube
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: "📺 YouTube и Discord"
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/youtube.mrs
+  hydra_telegram:
+    provider: telegram
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: "Выбор сервера"
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/telegram.mrs
+  hydra_epicgames:
+    provider: epicgames
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: "🎮 Игры"
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/epicgames.mrs
+  hydra_origin:
+    provider: origin
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: "🎮 Игры"
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/origin.mrs
+  hydra_riot:
+    provider: riot
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: "🎮 Игры"
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/riot.mrs
+  hydra_escape_from_tarkov:
+    provider: escapefromtarkov
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: "🎮 Игры"
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/escapefromtarkov.mrs
+  hydra_steam:
+    provider: steam
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: "🎮 Игры"
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/steam.mrs
+  hydra_faceit:
+    provider: faceit
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: "🎮 Игры"
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/faceit.mrs
+  hydra_games:
+    provider: games
+    owner: roscomvpn/custom-category
+    format: yaml
+    behavior: classical
+    route: "🎮 Игры"
+    url: https://raw.githubusercontent.com/roscomvpn/custom-category/release/mihomo/games.yaml
+  hydra_ru_apps:
+    provider: ru-apps
+    owner: roscomvpn/custom-category
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    url: https://raw.githubusercontent.com/roscomvpn/custom-category/release/mihomo/ru-apps.yaml
+  hydra_private_ips:
+    provider: private-ips
+    owner: hydraponique/roscomvpn-geoip
+    format: mrs
+    behavior: ipcidr
+    route: DIRECT
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geoip/release/mihomo/private.mrs
+  hydra_direct_ips:
+    provider: direct-ips
+    owner: hydraponique/roscomvpn-geoip
+    format: mrs
+    behavior: ipcidr
+    route: DIRECT
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geoip/release/mihomo/direct.mrs
+  hydra_category_ads:
+    provider: category-ads
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: REJECT
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/category-ads.mrs
+  hydra_win_spy:
+    provider: win-spy
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: REJECT
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/win-spy.mrs
+  hydra_torrent_domains:
+    provider: torrent-domains
+    owner: hydraponique/roscomvpn-geosite
+    format: mrs
+    behavior: domain
+    route: DIRECT
+    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/torrent.mrs
+  hydra_torrent_clients:
+    provider: torrent-clients
+    owner: legiz-ru/mihomo-rule-sets
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    url: https://raw.githubusercontent.com/legiz-ru/mihomo-rule-sets/main/other/torrent-clients.yaml

@@ -1,0 +1,23 @@
+payload:
+  - PROCESS-NAME,qbittorrent.exe
+  - PROCESS-NAME,BitTorrent.exe
+  - PROCESS-NAME,uTorrent.exe
+  - PROCESS-NAME,transmission.exe
+  - PROCESS-NAME,deluge.exe
+  - PROCESS-NAME,qbittorrent
+  - PROCESS-NAME,transmission
+  - PROCESS-NAME,transmission-gtk
+  - PROCESS-NAME,transmission-qt
+  - PROCESS-NAME,deluge
+  - PROCESS-NAME,aria2c
+  - PROCESS-NAME,utorrent.exe
+  - PROCESS-NAME,uTorrent Web.exe
+  - PROCESS-NAME,transmission-daemon
+  - PROCESS-NAME,transmission-cli
+  - PROCESS-NAME,deluged
+  - PROCESS-NAME,deluge-gtk
+  - PROCESS-NAME,rtorrent
+  - PROCESS-NAME,ktorrent
+  - PROCESS-NAME,vuze
+  - PROCESS-NAME,azureus
+  - PROCESS-NAME,tribler

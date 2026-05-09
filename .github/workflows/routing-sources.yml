@@ -1,0 +1,15 @@
+name: Routing sources
+
+on:
+  schedule:
+    - cron: "30 1 * * *"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Check upstream rule providers
+        run: uv run scripts/sync_sources.py --check
