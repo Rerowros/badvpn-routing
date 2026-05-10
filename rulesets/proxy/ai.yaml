@@ -1,6 +1,7 @@
 payload:
   - PROCESS-NAME,ChatGPT.exe
   - PROCESS-NAME,ChatGPT
+  - PROCESS-NAME,Codex.exe
   - PROCESS-NAME,com.openai.chatgpt
   - PROCESS-NAME,Claude.exe
   - PROCESS-NAME,Claude

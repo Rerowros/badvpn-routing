@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-10T14:55:42+00:00",
+  "generated_at_utc": "2026-05-10T15:20:00+00:00",
   "summary": {
     "source_count": 39,
     "ok_count": 39,
@@ -35,9 +35,9 @@
       "route": "🤖 AI",
       "ok": true,
       "status": null,
-      "bytes": 2553,
-      "sha256": "c911a4297ebc1263d311fe4d5a5c533619faa82e1f363d606bbbcc1e97b0f8b6",
-      "item_count": 74,
+      "bytes": 2580,
+      "sha256": "62632ffeb6b8f2077dfb0b66ce619dc363992c6a7b5c225b198358dfe4b0aa01",
+      "item_count": 75,
       "etag": null,
       "last_modified": null,
       "content_type": "local/file",
