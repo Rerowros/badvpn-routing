@@ -13,6 +13,13 @@ sources:
     behavior: classical
     route: "🤖 AI"
     path: rulesets/proxy/ai.yaml
+  badvpn_gemini:
+    provider: BadVPN-Gemini
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: "✨ Gemini"
+    path: rulesets/proxy/gemini.yaml
   badvpn_telegram_extra:
     provider: BadVPN-Telegram-Extra
     owner: local/badvpn-routing

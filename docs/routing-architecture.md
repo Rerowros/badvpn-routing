@@ -8,6 +8,7 @@ Custom BadVPN rules are split into standalone Mihomo classical providers:
 
 - `rulesets/proxy/youtube-discord.yaml`
 - `rulesets/proxy/ai.yaml`
+- `rulesets/proxy/gemini.yaml`
 - `rulesets/proxy/telegram-extra.yaml`
 - `rulesets/proxy/github-extra.yaml`
 - `rulesets/games/games-core.yaml`

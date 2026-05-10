@@ -141,7 +141,7 @@ proxy-groups:
   {% if "🇹🇷" in p.name or "Turkey" in p.name or "Турция" in p.name %}{% set groups.tr = true %}{% endif %}
   {% if "SPB" in p.name %}{% set groups.spb = true %}{% endif %}
   {% if "БЕЛЫЕ" in p.name or "->" in p.name or "LTE" in p.name or "BadVPN доступ" in p.name %}{% set groups.whitelist = true %}{% endif %}
-  {% if (("🇺🇸" in p.name or "USA" in p.name or "США" in p.name or "🇨🇭" in p.name or "Switzerland" in p.name or "Swiss" in p.name or "Швейцария" in p.name or "Bern" in p.name or "Берн" in p.name or "🇩🇪" in p.name or "Germany" in p.name or "Германия" in p.name or "🇭🇺" in p.name or "Hungary" in p.name or "Венгрия" in p.name or "🇹🇷" in p.name or "Turkey" in p.name or "Турция" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name) %}{% set groups.ai = true %}{% endif %}
+  {% if (("🇳🇱" in p.name or "Netherlands" in p.name or "Нидерланды" in p.name or "NL" in p.name or "🇸🇪" in p.name or "Sweden" in p.name or "Швеция" in p.name or "🇺🇸" in p.name or "USA" in p.name or "США" in p.name or "🇨🇭" in p.name or "Switzerland" in p.name or "Swiss" in p.name or "Швейцария" in p.name or "Bern" in p.name or "Берн" in p.name or "🇹🇷" in p.name or "Turkey" in p.name or "Турция" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name) %}{% set groups.ai = true %}{% endif %}
   {% if "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "BadVPN доступ" not in p.name and "SPB" not in p.name and "❌" not in p.name and "💳" not in p.name and "@BPN" not in p.name and "->" not in p.name and "🇳🇱" not in p.name and "🇷🇴" not in p.name and "🇫🇮" not in p.name and "Finland" not in p.name and "Финляндия" not in p.name and "XHTTP" not in p.name %}{% set groups.auto = true %}{% endif %}
   {% endfor %}
 
@@ -206,8 +206,27 @@ proxy-groups:
     lazy: false
     hidden: true
     proxies:
-      {% if groups.ai %}{% for p in conf.proxies %}{% if ("🇺🇸" in p.name or "USA" in p.name or "США" in p.name or "🇨🇭" in p.name or "Switzerland" in p.name or "Swiss" in p.name or "Швейцария" in p.name or "Bern" in p.name or "Берн" in p.name or "🇩🇪" in p.name or "Germany" in p.name or "Германия" in p.name or "🇭🇺" in p.name or "Hungary" in p.name or "Венгрия" in p.name or "🇹🇷" in p.name or "Turkey" in p.name or "Турция" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
-      {% endif %}{% endfor %}{% endif %}- "⚡ Авто (рекомендуется)"
+      {% if groups.ai %}{% for p in conf.proxies %}{% if ("🇨🇭" in p.name or "Switzerland" in p.name or "Swiss" in p.name or "Швейцария" in p.name or "Bern" in p.name or "Берн" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% for p in conf.proxies %}{% if ("🇳🇱" in p.name or "Netherlands" in p.name or "Нидерланды" in p.name or "NL" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% for p in conf.proxies %}{% if ("🇸🇪" in p.name or "Sweden" in p.name or "Швеция" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% for p in conf.proxies %}{% if ("🇺🇸" in p.name or "USA" in p.name or "США" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% for p in conf.proxies %}{% if ("🇹🇷" in p.name or "Turkey" in p.name or "Турция" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% endif %}- "Выбор сервера"
+
+  - name: "✨ Gemini"
+    type: fallback
+    url: "https://gemini.google.com/app"
+    interval: 300
+    timeout: 5000
+    max-failed-times: 2
+    expected-status: 200
+    lazy: false
+    hidden: true
+    proxies:
+      {% if groups.ch %}{% for p in conf.proxies %}{% if ("🇨🇭" in p.name or "Switzerland" in p.name or "Swiss" in p.name or "Швейцария" in p.name or "Bern" in p.name or "Берн" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% endif %}{% if groups.us %}{% for p in conf.proxies %}{% if ("🇺🇸" in p.name or "USA" in p.name or "США" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% endif %}{% if groups.se %}{% for p in conf.proxies %}{% if ("🇸🇪" in p.name or "Sweden" in p.name or "Швеция" in p.name) and "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "->" not in p.name and "BadVPN доступ" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
+      {% endif %}{% endfor %}{% endif %}- "Выбор сервера"
 
   - name: "⚙️ Обычные серверы"
     type: url-test
@@ -339,6 +358,15 @@ rule-providers:
     format: yaml
     url: "{{ badvpn_ruleset_base_url }}/proxy/ai.yaml"
     path: ./ruleset/badvpn-ai.yaml
+    proxy: "⚡ Авто (рекомендуется)"
+    interval: 86400
+
+  BadVPN-Gemini:
+    type: http
+    behavior: classical
+    format: yaml
+    url: "{{ badvpn_ruleset_base_url }}/proxy/gemini.yaml"
+    path: ./ruleset/badvpn-gemini.yaml
     proxy: "⚡ Авто (рекомендуется)"
     interval: 86400
 
@@ -696,6 +724,7 @@ rules:
   - GEOSITE,youtube,📺 YouTube и Discord
   - GEOSITE,discord,📺 YouTube и Discord
 
+  - RULE-SET,BadVPN-Gemini,✨ Gemini
   - RULE-SET,BadVPN-AI,🤖 AI
 
   - RULE-SET,Nemu-X-TG,Выбор сервера
