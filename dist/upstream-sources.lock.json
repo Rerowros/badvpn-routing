@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-05-10T15:20:00+00:00",
+  "generated_at_utc": "2026-05-10T16:18:44+00:00",
   "summary": {
     "source_count": 39,
     "ok_count": 39,
@@ -107,9 +107,9 @@
       "route": "🎮 Игры",
       "ok": true,
       "status": null,
-      "bytes": 6290,
-      "sha256": "88ccf32d461db087e46b547c02ab5c2f2a4d04380242eeac524b050f81a167cb",
-      "item_count": 188,
+      "bytes": 4958,
+      "sha256": "5c177decd8897a48566ab69fc138f9abb953fd6c4e5c0eab05fcc6d0d189ed31",
+      "item_count": 148,
       "etag": null,
       "last_modified": null,
       "content_type": "local/file",

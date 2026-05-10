@@ -150,7 +150,7 @@ proxy-groups:
     type: select
     proxies:
       - "⚡ Авто (рекомендуется)"
-      - "🛡 Режим белых списков (БПЛА)"
+      - "🛡 Белые списки"
       {% if groups.us %}- "🇺🇸 США (все серверы)"
       {% endif %}{% if groups.se %}- "🇸🇪 Швеция (все серверы)"
       {% endif %}{% if groups.ch %}- "🇨🇭 Швейцария (все серверы)"
@@ -175,13 +175,14 @@ proxy-groups:
   - name: "⚡ Авто (рекомендуется)"
     type: fallback
     url: "http://www.gstatic.com/generate_204"
-    interval: 120
+    interval: 300
     timeout: 5000
     max-failed-times: 2
     expected-status: 204
     lazy: false
     proxies:
       - "⚙️ Обычные серверы"
+      - "🛡 Белые списки"
 
   - name: "📺 YouTube и Discord"
     type: fallback
@@ -351,7 +352,7 @@ proxy-groups:
       {% endif %}{% endfor %}- "⚡ Авто (рекомендуется)"
   {% endif %}
 
-  - name: "🛡 Режим белых списков (БПЛА)"
+  - name: "🛡 Белые списки"
     type: fallback
     url: "http://www.gstatic.com/generate_204"
     interval: 300
@@ -361,7 +362,6 @@ proxy-groups:
     lazy: false
     proxies:
       {% if groups.whitelist %}{% for p in conf.proxies %}{% if "БЕЛЫЕ" in p.name or "->" in p.name or "LTE" in p.name or "BadVPN доступ" in p.name %}- "{{ p.name }}"
-      {% endif %}{% endfor %}{% elif groups.auto %}{% for p in conf.proxies %}{% if "БЕЛЫЕ" not in p.name and "LTE" not in p.name and "BadVPN доступ" not in p.name and "SPB" not in p.name and "❌" not in p.name and "💳" not in p.name and "@BPN" not in p.name and "->" not in p.name and "🇳🇱" not in p.name and "🇷🇴" not in p.name and "🇫🇮" not in p.name and "Finland" not in p.name and "Финляндия" not in p.name and "XHTTP" not in p.name %}- "{{ p.name }}"
       {% endif %}{% endfor %}{% else %}- DIRECT
       {% endif %}
 
@@ -760,6 +760,15 @@ rules:
   - RULE-SET,BadVPN-GitHub-Extra,Выбор сервера
   - RULE-SET,google-play,Выбор сервера
 
+  # Domestic whitelist services stay DIRECT before generic proxy catch-all lists.
+  - RULE-SET,BadVPN-RU-Core,DIRECT
+  - RULE-SET,DOMAIN-DIRECT-SUFFIX,DIRECT
+  - RULE-SET,ru-apps,DIRECT
+  - RULE-SET,microsoft,DIRECT
+  - RULE-SET,apple,DIRECT
+  - RULE-SET,category-ru,DIRECT
+  - RULE-SET,hydra-whitelist,DIRECT
+
   # Games default to DIRECT through the separate group, but can be switched to VPN in the client UI.
   - RULE-SET,BadVPN-Games-Core,🎮 Игры
   - RULE-SET,games,🎮 Игры
@@ -773,14 +782,6 @@ rules:
   - RULE-SET,Nemu-X-WL,Выбор сервера
   - RULE-SET,Nemu-X-APPS,Выбор сервера
 
-  # Broad RU direct goes after proxy exceptions so blocked non-critical domains can still be proxied.
-  - RULE-SET,BadVPN-RU-Core,DIRECT
-  - RULE-SET,DOMAIN-DIRECT-SUFFIX,DIRECT
-  - RULE-SET,ru-apps,DIRECT
-  - RULE-SET,microsoft,DIRECT
-  - RULE-SET,apple,DIRECT
-  - RULE-SET,category-ru,DIRECT
-  - RULE-SET,hydra-whitelist,DIRECT
   - RULE-SET,direct-ips,DIRECT
   - GEOIP,ru,DIRECT,no-resolve
 
