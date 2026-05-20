@@ -1,4 +1,15 @@
 payload:
+  - PROCESS-NAME,ForzaHorizon6.exe
+  - PROCESS-NAME,forzahorizon6.exe
+  - PROCESS-NAME,ForzaHorizon5.exe
+  - PROCESS-NAME,forzahorizon5.exe
+  - PROCESS-NAME,ForzaHorizon4.exe
+  - PROCESS-NAME,forzahorizon4.exe
+  - PROCESS-NAME,ForzaHorizon3.exe
+  - PROCESS-NAME,forzahorizon3.exe
+  - PROCESS-NAME,ForzaMotorsport.exe
+  - PROCESS-NAME,forzamotorsport.exe
+  - PROCESS-NAME,forza_gaming.desktop.x64_release_final.exe
   - PROCESS-NAME,bf6.exe
   - PROCESS-NAME,BF6.exe
   - PROCESS-NAME,bf2042.exe
@@ -117,6 +128,14 @@ payload:
   - DOMAIN-SUFFIX,rsg.sc
   - DOMAIN-SUFFIX,roblox.com
   - DOMAIN-SUFFIX,rbxcdn.com
+  - DOMAIN-SUFFIX,forza.net
+  - DOMAIN-SUFFIX,forzamotorsport.net
+  - DOMAIN-SUFFIX,xboxlive.com
+  - DOMAIN-SUFFIX,xboxservices.com
+  - DOMAIN-SUFFIX,xboxab.com
+  - DOMAIN-SUFFIX,playfab.com
+  - DOMAIN-SUFFIX,playfabapi.com
+  - DOMAIN-SUFFIX,playfabcdn.com
   - DOMAIN-SUFFIX,minecraft.net
   - DOMAIN-SUFFIX,mojang.com
   - DOMAIN-SUFFIX,steampowered.com

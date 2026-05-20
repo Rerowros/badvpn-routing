@@ -760,6 +760,9 @@ rules:
   - RULE-SET,BadVPN-GitHub-Extra,Выбор сервера
   - RULE-SET,google-play,Выбор сервера
 
+  # Local game overrides stay above broad DIRECT whitelists, especially Microsoft/Xbox.
+  - RULE-SET,BadVPN-Games-Core,🎮 Игры
+
   # Domestic whitelist services stay DIRECT before generic proxy catch-all lists.
   - RULE-SET,BadVPN-RU-Core,DIRECT
   - RULE-SET,DOMAIN-DIRECT-SUFFIX,DIRECT
@@ -770,7 +773,6 @@ rules:
   - RULE-SET,hydra-whitelist,DIRECT
 
   # Games default to DIRECT through the separate group, but can be switched to VPN in the client UI.
-  - RULE-SET,BadVPN-Games-Core,🎮 Игры
   - RULE-SET,games,🎮 Игры
   - RULE-SET,epicgames,🎮 Игры
   - RULE-SET,origin,🎮 Игры
