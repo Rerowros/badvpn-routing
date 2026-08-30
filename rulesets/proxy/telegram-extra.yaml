@@ -1,3 +1,7 @@
+# BadVPN: сети Telegram -> прокси. Правило ставится с no-resolve.
+# Надмножество Nemu-x/privWL-clash/tgprx.yaml: все его IPv4 у нас уже были,
+# IPv6 добавлены ниже. Отдельный rule-provider Nemu-X-TG после этого не нужен.
+# IPv6 в шаблоне сейчас выключен (ipv6: false) — записи лежат про запас.
 payload:
   - IP-CIDR,149.154.160.0/20
   - IP-CIDR,91.108.4.0/22
@@ -9,3 +13,8 @@ payload:
   - IP-CIDR,95.161.64.0/20
   - IP-CIDR,91.105.192.0/23
   - IP-CIDR,185.76.151.0/24
+  - IP-CIDR6,2001:67c:4e8::/48
+  - IP-CIDR6,2001:b28:f23c::/48
+  - IP-CIDR6,2001:b28:f23d::/48
+  - IP-CIDR6,2001:b28:f23f::/48
+  - IP-CIDR6,2a0a:f280::/32
