@@ -1,0 +1,253 @@
+# BadVPN: замена Nemu-x DOMAIN-DIRECT-KEYWORD (#114 шаблона) без ложных DIRECT.
+# Точные ключевые слова (0 попаданий в зарубежные домены и не больше 100 заблокированных
+# в РФ доменов вне .ru) оставлены как есть. Широкие
+# (mail, mir, ivi, wb, vk, tbank, esia, …) заменены на DOMAIN-SUFFIX тех российских доменов
+# вне .ru/.su/.рф, которые сейчас держатся именно на этом слове. Домены .ru/.su/.рф
+# ловит DOMAIN-SUFFIX,ru/su/xn--p1ai шаблона раньше (#98-#100), поэтому в замену не нужны.
+# «Зарубежные» = v2fly вне category-ru + Tranco top-100k + SNI ночной выборки на выходах,
+# без RU-зон и доменов RU-компаний. Цифры по каждому слову — _work/build-stats.json.
+# Место: вместо RULE-SET,DOMAIN-DIRECT-KEYWORD,DIRECT (тот же слот, та же цель DIRECT).
+# Собрано build.py 2026-09-27.
+payload:
+  # --- оставлены: 0 попаданий в зарубежные домены
+  - DOMAIN-KEYWORD,gosuslugi
+  - DOMAIN-KEYWORD,mosreg
+  - DOMAIN-KEYWORD,mosgortrans
+  - DOMAIN-KEYWORD,vkplay
+  - DOMAIN-KEYWORD,sberbank
+  - DOMAIN-KEYWORD,sberpay
+  - DOMAIN-KEYWORD,tinkoff
+  - DOMAIN-KEYWORD,gazprombank
+  - DOMAIN-KEYWORD,psbank
+  - DOMAIN-KEYWORD,rshb
+  - DOMAIN-KEYWORD,rosbank
+  - DOMAIN-KEYWORD,uralsib
+  - DOMAIN-KEYWORD,akbars
+  - DOMAIN-KEYWORD,sovcombank
+  - DOMAIN-KEYWORD,pochtabank
+  - DOMAIN-KEYWORD,wildberries
+  - DOMAIN-KEYWORD,wbbasket
+  - DOMAIN-KEYWORD,megamarket
+  - DOMAIN-KEYWORD,sbermarket
+  - DOMAIN-KEYWORD,dns-shop
+  - DOMAIN-KEYWORD,vprok
+  - DOMAIN-KEYWORD,samokat
+  - DOMAIN-KEYWORD,vkusvill
+  - DOMAIN-KEYWORD,perekrestok
+  - DOMAIN-KEYWORD,detmir
+  - DOMAIN-KEYWORD,fix-price
+  - DOMAIN-KEYWORD,sportmaster
+  - DOMAIN-KEYWORD,2gis
+  - DOMAIN-KEYWORD,delivery-club
+  - DOMAIN-KEYWORD,dostavista
+  - DOMAIN-KEYWORD,cdek
+  - DOMAIN-KEYWORD,megafon
+  - DOMAIN-KEYWORD,rostelecom
+  - DOMAIN-KEYWORD,amediateka
+  - DOMAIN-KEYWORD,gamexp
+
+  # --- заменены: широкие слова -> точные домены
+  # esia: 29 зарубежных (ahlulbaitindonesia.or.id, beautynesia.id, bokepindonesia.me, cartesia.ai, …), 102 заблокированных; замена: 0 правил
+  # nalog: 2 зарубежных (analoghq.ai, analog.com); замена: 0 правил
+  # fns: 1 зарубежных (fnswb.com); замена: 0 правил
+  # gibdd: 111 заблокированных в РФ доменов вне .ru; замена: 0 правил
+  # yandex: ловит yandexcloud.net (сайты и S3 клиентов облака) и рекламу/счётчики Яндекса; замена: 37 правил
+  - DOMAIN,console.yandex.cloud # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex-bank.net # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.aero # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.asia # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.az # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.by # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN,yandex.cloud # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.co.il # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.com # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.com.am # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.com.ge # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.com.tr # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.de # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.ee # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.eu # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.fi # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.fr # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.it # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.jobs # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.kg # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.kz # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.lt # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.lv # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.market # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.md # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.mobi # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.net # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.org # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.pl # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.st # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.sx # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.tj # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.tm # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.tr # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandex.uz # вместо DOMAIN-KEYWORD,yandex
+  - DOMAIN-SUFFIX,yandexwebcache.net # вместо DOMAIN-KEYWORD,yandex
+  # kinopoisk: 492 заблокированных в РФ доменов вне .ru; замена: 1 правил
+  - DOMAIN-SUFFIX,kinopoisk-ott.com # вместо DOMAIN-KEYWORD,kinopoisk
+  # yango: 2 зарубежных (millipiyangoonline.com, yangosaft.net); замена: 3 правил
+  - DOMAIN-SUFFIX,yango-b2b.com # вместо DOMAIN-KEYWORD,yango
+  - DOMAIN-SUFFIX,yango-team.com # вместо DOMAIN-KEYWORD,yango
+  - DOMAIN-SUFFIX,yango.tech # вместо DOMAIN-KEYWORD,yango
+  # vk: 46 зарубежных (allatvkanaler.se, avkn.co, avkuy.com, cloud-vk.com, …), 5820 заблокированных; замена: 38 правил
+  - DOMAIN-SUFFIX,cdn-vk.net # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,mvk.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk-apps.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk-cdn.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk-cdn.me # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk-cdn.net # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk-portal.net # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk.cc # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk.company # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk.design # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk.kz # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk.link # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk.me # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk.team # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vk.video # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkcache.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkcdnservice.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkclips.app # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkgo.app # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vklive.app # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkmessenger.app # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkmessenger.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkontakte.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkpay.app # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkpay.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkpay.io # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkplay.live # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkteams.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkuser.net # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkuseraudio.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkuseraudio.net # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkuserlive.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkuserlive.net # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkuservideo.com # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkuservideo.net # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkusvill.tech # вместо DOMAIN-KEYWORD,vk
+  - DOMAIN-SUFFIX,vkworkspace.kz # вместо DOMAIN-KEYWORD,vk
+  # mail: 265 зарубежных (10minutemail.com, 33mail.com, agentmail.to, aimailhome.io, …), 349 заблокированных; замена: 2 правил
+  - DOMAIN-SUFFIX,smailru.net # вместо DOMAIN-KEYWORD,mail
+  - DOMAIN-SUFFIX,vmailru.net # вместо DOMAIN-KEYWORD,mail
+  # mygames: 1 зарубежных (mygames.tools); замена: 0 правил
+  # sber: 5 зарубежных (carlsberggroup.com, gamersberg.com, kongsberg.com, sberkassa.site, …); замена: 11 правил
+  - DOMAIN-SUFFIX,bps-sberbank.by # вместо DOMAIN-KEYWORD,sber
+  - DOMAIN-SUFFIX,sber-bank.by # вместо DOMAIN-KEYWORD,sber
+  - DOMAIN-SUFFIX,sber-zvuk.com # вместо DOMAIN-KEYWORD,sber
+  - DOMAIN-SUFFIX,sber.me # вместо DOMAIN-KEYWORD,sber
+  - DOMAIN-SUFFIX,sber.pro # вместо DOMAIN-KEYWORD,sber
+  - DOMAIN-SUFFIX,sber.world # вместо DOMAIN-KEYWORD,sber
+  - DOMAIN-SUFFIX,sberauto.com # вместо DOMAIN-KEYWORD,sber
+  - DOMAIN-SUFFIX,sberbank-tele.com # вместо DOMAIN-KEYWORD,sber
+  - DOMAIN-SUFFIX,sberbank.com # вместо DOMAIN-KEYWORD,sber
+  - DOMAIN-SUFFIX,sberbusiness.live # вместо DOMAIN-KEYWORD,sber
+  - DOMAIN-SUFFIX,sbermarket.com # вместо DOMAIN-KEYWORD,sber
+  # tbank: 39 зарубежных (belinvestbank.by, datasheetbank.com, fednetbank.com, frostbank.com, …); замена: 1 правил
+  - DOMAIN-SUFFIX,tbank-online.com # вместо DOMAIN-KEYWORD,tbank
+  # alfabank: 1 зарубежных (alfabank.sale); замена: 2 правил
+  - DOMAIN-SUFFIX,alfabank.com # вместо DOMAIN-KEYWORD,alfabank
+  - DOMAIN-SUFFIX,alfabank.st # вместо DOMAIN-KEYWORD,alfabank
+  # vtb: 251 заблокированных в РФ доменов вне .ru; замена: 8 правил
+  - DOMAIN-SUFFIX,vtb-russia.com # вместо DOMAIN-KEYWORD,vtb
+  - DOMAIN-SUFFIX,vtb.bank.in # вместо DOMAIN-KEYWORD,vtb
+  - DOMAIN-SUFFIX,vtb.com # вместо DOMAIN-KEYWORD,vtb
+  - DOMAIN-SUFFIX,vtb.promo # вместо DOMAIN-KEYWORD,vtb
+  - DOMAIN-SUFFIX,vtb24.com # вместо DOMAIN-KEYWORD,vtb
+  - DOMAIN-SUFFIX,vtbcareer.com # вместо DOMAIN-KEYWORD,vtb
+  - DOMAIN-SUFFIX,vtbindia.com # вместо DOMAIN-KEYWORD,vtb
+  - DOMAIN-SUFFIX,vtbrussia.com # вместо DOMAIN-KEYWORD,vtb
+  # raiffeisen: 9 зарубежных (raiffeisen.at, raiffeisen.ch, raiffeisen-kosovo.com, raiffeisen.al, …); замена: 0 правил
+  # mkb: 1 зарубежных (xn--2z1bw8k1pjz5ccumkb.kr); замена: 0 правил
+  # mir: 133 зарубежных (30nqt3mainfkyl16mirror.cfd, admiral.at, admiral.com, admiral.hr, …), 12836 заблокированных; замена: 1 правил
+  - DOMAIN-SUFFIX,mir24.tv # вместо DOMAIN-KEYWORD,mir
+  # nspk: 1 зарубежных (nspk.com); замена: 0 правил
+  # sbp: 4 зарубежных (bsbportal.com, sbpdcl.co.in, watsbplus.com, volclivesaasbp.com); замена: 0 правил
+  # ozon: 13 зарубежных (autozone.com, autozone.com.mx, grupoozonteck.com, indozone.id, …); замена: 25 правил
+  - DOMAIN-SUFFIX,ozon.by # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.com # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.com.by # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.com.kz # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.dev # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.express # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.global # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.kz # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.market # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.tech # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.tm # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.travel # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozon.uz # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozoncamp.pro # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozoncom.by # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozonglobalevents.com # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozonpartners.by # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozonrocet.by # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozonroket.by # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozonru.co.il # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozonru.com # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozonru.eu # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozonru.me # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,ozonusercontent.com # вместо DOMAIN-KEYWORD,ozon
+  - DOMAIN-SUFFIX,rocketozon.by # вместо DOMAIN-KEYWORD,ozon
+  # wb: 168 зарубежных (aceshowbiz.com, acpwb.com, andrewbadr.com, anwb.nl, …), 3746 заблокированных; замена: 10 правил
+  - DOMAIN-SUFFIX,paywb.com # вместо DOMAIN-KEYWORD,wb
+  - DOMAIN-SUFFIX,rwbautomation.tech # вместо DOMAIN-KEYWORD,wb
+  - DOMAIN-SUFFIX,wb.am # вместо DOMAIN-KEYWORD,wb
+  - DOMAIN-SUFFIX,wb.kg # вместо DOMAIN-KEYWORD,wb
+  - DOMAIN-SUFFIX,wb.kz # вместо DOMAIN-KEYWORD,wb
+  - DOMAIN-SUFFIX,wbautomation.tech # вместо DOMAIN-KEYWORD,wb
+  - DOMAIN-SUFFIX,wbcontent.net # вместо DOMAIN-KEYWORD,wb
+  - DOMAIN-SUFFIX,wbr.by # вместо DOMAIN-KEYWORD,wb
+  - DOMAIN-SUFFIX,wbstatic.net # вместо DOMAIN-KEYWORD,wb
+  - DOMAIN-SUFFIX,wbwh.tech # вместо DOMAIN-KEYWORD,wb
+  # avito: 3 зарубежных (avito.ma, folhavitoria.com.br, gravito.net); замена: 3 правил
+  - DOMAIN-SUFFIX,avito.com # вместо DOMAIN-KEYWORD,avito
+  - DOMAIN-SUFFIX,avito.st # вместо DOMAIN-KEYWORD,avito
+  - DOMAIN-SUFFIX,avito.tech # вместо DOMAIN-KEYWORD,avito
+  # lamoda: 1 зарубежных (lamoda.pl); замена: 2 правил
+  - DOMAIN-SUFFIX,lamoda.by # вместо DOMAIN-KEYWORD,lamoda
+  - DOMAIN-SUFFIX,lamoda.kz # вместо DOMAIN-KEYWORD,lamoda
+  # mvideo: 9 зарубежных (mmvideocdn.com, camvideos.org, camvideos.tv, camvideoshub.com, …); замена: 1 правил
+  - DOMAIN-SUFFIX,mvideo.edna.io # вместо DOMAIN-KEYWORD,mvideo
+  # eldorado: 1 зарубежных (eldorado.gg), 10896 заблокированных; замена: 0 правил
+  # citilink: 1 зарубежных (citilink.co.id); замена: 0 правил
+  # magnit: 3 зарубежных (magnit.ad, magnite-audience-prod.com, magnite.com), 208 заблокированных; замена: 2 правил
+  - DOMAIN-SUFFIX,magnit.com # вместо DOMAIN-KEYWORD,magnit
+  - DOMAIN-SUFFIX,magnit.tech # вместо DOMAIN-KEYWORD,magnit
+  # lenta: 4 зарубежных (blogolenta.com, elenta.lt, lenta.news, perlentaucher.de); замена: 2 правил
+  - DOMAIN-SUFFIX,lenta.com # вместо DOMAIN-KEYWORD,lenta
+  - DOMAIN-SUFFIX,lenta.tech # вместо DOMAIN-KEYWORD,lenta
+  # pochta: 1 зарубежных (evropochta.by); замена: 0 правил
+  # mts: 17 зарубежных (bellmts.net, epymtservice.com, mts.by, mts.net, …), 135 заблокированных; замена: 1 правил
+  - DOMAIN-SUFFIX,mts-ws.net # вместо DOMAIN-KEYWORD,mts
+  # beeline: 2 зарубежных (beeline.kz, beeline.uz); замена: 0 правил
+  # tele2: 5 зарубежных (tele2.kz, tele2.lt, tele2.net, tele2.nl, …); замена: 0 правил
+  # yota: 23 зарубежных (global.toyota, id.toyota, toyota-4runner.org, toyota-europe.com, …); замена: 0 правил
+  # okko: 3 зарубежных (marokko.nl, tokkobroker.com, hokkoku.co.jp), 289 заблокированных; замена: 3 правил
+  - DOMAIN-SUFFIX,okko.sport # вместо DOMAIN-KEYWORD,okko
+  - DOMAIN-SUFFIX,okko.tv # вместо DOMAIN-KEYWORD,okko
+  - DOMAIN-SUFFIX,okkoapi.tv # вместо DOMAIN-KEYWORD,okko
+  # ivi: 247 зарубежных (activiaweb.com.ar, activistpost.com, activityjapan.com, adondevivir.com, …), 993 заблокированных; замена: 2 правил
+  - DOMAIN-SUFFIX,ivi.tv # вместо DOMAIN-KEYWORD,ivi
+  - DOMAIN-SUFFIX,ivicdn.tv # вместо DOMAIN-KEYWORD,ivi
+  # rutube: 2 зарубежных (rutube.info, rutube.link); замена: 1 правил
+  - DOMAIN-SUFFIX,rutube.sport # вместо DOMAIN-KEYWORD,rutube
+  # premier: 15 зарубежных (premier-kladionica.com, premierbet.co.ao, premierbet.co.mz, premierbet.com, …), 214 заблокированных; замена: 1 правил
+  - DOMAIN-SUFFIX,premier.one # вместо DOMAIN-KEYWORD,premier
+  # wink: 17 зарубежных (domainwink.com, kijangwinking.com, luckywinke.com, twinkaboo.com, …), 563 заблокированных; замена: 1 правил
+  - DOMAIN-SUFFIX,wink.am # вместо DOMAIN-KEYWORD,wink
+  # kion: 9 зарубежных (hkionline.cn, kurakionline.com, tankionline.com, tekion.xyz, …), 250 заблокированных; замена: 0 правил
+  # selectel: хостинг: сайты клиентов под брендом; замена: 1 правил
+  - DOMAIN,selectel.com # вместо DOMAIN-KEYWORD,selectel
+  # timeweb: 2 зарубежных (playtimeweb.com, timeweb.org); замена: 2 правил
+  - DOMAIN,timeweb.cloud # вместо DOMAIN-KEYWORD,timeweb
+  - DOMAIN,timeweb.com # вместо DOMAIN-KEYWORD,timeweb
+  # cdnvideo: 5 зарубежных (cdnvideo.network, cdnvideo11.shop, cdnvideohub.com, highcdnvideo.link, …); замена: 0 правил
+  # 4game: 6 зарубежных (4game.com, data4game.com, koin404game.com, wifi4games.com, …); замена: 0 правил

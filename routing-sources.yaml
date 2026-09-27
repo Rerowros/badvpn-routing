@@ -27,13 +27,6 @@ sources:
     behavior: classical
     route: "Выбор сервера"
     path: rulesets/proxy/telegram-extra.yaml
-  badvpn_github_extra:
-    provider: BadVPN-GitHub-Extra
-    owner: local/badvpn-routing
-    format: yaml
-    behavior: classical
-    route: "Выбор сервера"
-    path: rulesets/proxy/github-extra.yaml
   badvpn_games_core:
     provider: BadVPN-Games-Core
     owner: local/badvpn-routing
@@ -48,6 +41,34 @@ sources:
     behavior: classical
     route: DIRECT
     path: rulesets/direct/ru-core.yaml
+  badvpn_ru_services:
+    provider: BadVPN-RU-Services
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    path: rulesets/direct/ru-services.min.yaml
+  badvpn_ru_apps:
+    provider: BadVPN-RU-Apps
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    path: rulesets/direct/ru-apps.min.yaml
+  badvpn_ru_asn:
+    provider: BadVPN-RU-ASN
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    path: rulesets/direct/ru-asn.min.yaml
+  badvpn_ru_keywords:
+    provider: BadVPN-RU-Keywords
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    path: rulesets/direct/ru-keywords-replacement.min.yaml
   badvpn_torrents:
     provider: BadVPN-Torrents
     owner: local/badvpn-routing

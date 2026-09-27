@@ -1,11 +1,26 @@
 payload:
   - DOMAIN-KEYWORD,sberbank
-  - DOMAIN-KEYWORD,sber
+  - DOMAIN-SUFFIX,bps-sberbank.by
+  - DOMAIN-SUFFIX,sber-bank.by
+  - DOMAIN-SUFFIX,sber-zvuk.com
+  - DOMAIN-SUFFIX,sber.me
+  - DOMAIN-SUFFIX,sber.pro
+  - DOMAIN-SUFFIX,sber.world
+  - DOMAIN-SUFFIX,sberauto.com
+  - DOMAIN-SUFFIX,sberbank-tele.com
+  - DOMAIN-SUFFIX,sberbank.com
+  - DOMAIN-SUFFIX,sberbusiness.live
   - DOMAIN-KEYWORD,tinkoff
-  - DOMAIN-KEYWORD,t-bank
-  - DOMAIN-KEYWORD,alfabank
-  - DOMAIN-KEYWORD,vtb
-  - DOMAIN-KEYWORD,raiffeisen
+  - DOMAIN-SUFFIX,alfabank.com
+  - DOMAIN-SUFFIX,alfabank.st
+  - DOMAIN-SUFFIX,vtb-russia.com
+  - DOMAIN-SUFFIX,vtb.bank.in
+  - DOMAIN-SUFFIX,vtb.com
+  - DOMAIN-SUFFIX,vtb.promo
+  - DOMAIN-SUFFIX,vtb24.com
+  - DOMAIN-SUFFIX,vtbcareer.com
+  - DOMAIN-SUFFIX,vtbindia.com
+  - DOMAIN-SUFFIX,vtbrussia.com
   - DOMAIN-KEYWORD,gazprombank
   - DOMAIN-KEYWORD,sovcombank
   - DOMAIN-KEYWORD,rshb
@@ -14,32 +29,72 @@ payload:
   - DOMAIN-KEYWORD,rosbank
   - DOMAIN-KEYWORD,uralsib
   - DOMAIN-KEYWORD,bspb
-  - DOMAIN-KEYWORD,homecredit
-  - DOMAIN-KEYWORD,renaissance
   - DOMAIN-KEYWORD,gosuslugi
-  - DOMAIN-KEYWORD,esia
   - DOMAIN-SUFFIX,mos.ru
   - DOMAIN-SUFFIX,kremlin.ru
   - DOMAIN-SUFFIX,gov.ru
   - DOMAIN-SUFFIX,fns.ru
-  - DOMAIN-SUFFIX,sfr.gov.ru
   - DOMAIN-SUFFIX,gibdd.ru
   - DOMAIN-SUFFIX,mir.ru
   - DOMAIN-SUFFIX,nspk.ru
-  - DOMAIN-SUFFIX,sbp.nspk.ru
   - DOMAIN-SUFFIX,mironline.ru
-  - GEOSITE,yandex
+  - DOMAIN-SUFFIX,yandex
+  - DOMAIN-SUFFIX,yandex.kz
+  - DOMAIN-SUFFIX,yandex.tj
+  - DOMAIN-SUFFIX,cabconnect.org
+  - DOMAIN-SUFFIX,clstorage.net
+  - DOMAIN-SUFFIX,driveawaytaxi.org
+  - DOMAIN-SUFFIX,gogettaxi.org
+  - DOMAIN-SUFFIX,goup.ai
+  - DOMAIN-SUFFIX,meteum.ai
+  - DOMAIN-SUFFIX,rostaxi.org
+  - DOMAIN-SUFFIX,shedevrum.ai
+  - DOMAIN-SUFFIX,static-storage.net
+  - DOMAIN-SUFFIX,taxiaid.org
+  - DOMAIN-SUFFIX,taxiguru.org
+  - DOMAIN-SUFFIX,taxitax.org
+  - DOMAIN-SUFFIX,yandex-bank.net
+  - DOMAIN-SUFFIX,yandex.lt
+  - DOMAIN-SUFFIX,yandex.aero
+  - DOMAIN-SUFFIX,yandex.asia
+  - DOMAIN-SUFFIX,yandex.az
+  - DOMAIN-SUFFIX,yandex.by
+  - DOMAIN-SUFFIX,yandex.de
+  - DOMAIN-SUFFIX,yandex.ee
+  - DOMAIN-SUFFIX,yandex.eu
+  - DOMAIN-SUFFIX,yandex.fi
+  - DOMAIN-SUFFIX,yndx.net
+  - DOMAIN-SUFFIX,yandex.fr
+  - DOMAIN-SUFFIX,yandex.it
+  - DOMAIN-SUFFIX,yandex.jobs
+  - DOMAIN-SUFFIX,yandex.kg
+  - DOMAIN-SUFFIX,yandex.pl
+  - DOMAIN-SUFFIX,yandex.mobi
+  - DOMAIN-SUFFIX,yandex.org
+  - DOMAIN-SUFFIX,yandex.md
+  - DOMAIN-SUFFIX,yandex.st
+  - DOMAIN-SUFFIX,yandex.sx
+  - DOMAIN-SUFFIX,yandex.lv
+  - DOMAIN-SUFFIX,yandex.tm
+  - DOMAIN-SUFFIX,yandex.tr
+  - DOMAIN-SUFFIX,yandex.uz
+  - DOMAIN-SUFFIX,yandexwebcache.net
+  - DOMAIN-SUFFIX,yango-b2b.com
+  - DOMAIN-SUFFIX,yango-team.com
+  - DOMAIN-SUFFIX,yango.tech
+  - DOMAIN-SUFFIX,yandex.com.tr
+  - DOMAIN-SUFFIX,yandex.com.ge
+  - DOMAIN-SUFFIX,yandex.com.am
+  - DOMAIN-SUFFIX,yandex.co.il
   - DOMAIN-SUFFIX,yandex.com
   - DOMAIN-SUFFIX,yandex.net
   - DOMAIN-SUFFIX,yastatic.net
   - DOMAIN-SUFFIX,yastat.net
-  - DOMAIN-SUFFIX,yandexcloud.net
   - DOMAIN-SUFFIX,ya.cc
   - DOMAIN-SUFFIX,ya.ru
   - GEOSITE,vk
   - DOMAIN-SUFFIX,vk.com
   - DOMAIN-SUFFIX,vk.me
-  - DOMAIN-SUFFIX,vkvideo.com
   - DOMAIN-SUFFIX,vkmessenger.com
   - DOMAIN-SUFFIX,vk-cdn.com
   - DOMAIN-SUFFIX,vk-cdn.net
@@ -47,22 +102,99 @@ payload:
   - DOMAIN-SUFFIX,vkuser.net
   - DOMAIN-SUFFIX,vkuseraudio.net
   - DOMAIN-SUFFIX,vkuservideo.net
-  - GEOSITE,mailru
+  - DOMAIN-SUFFIX,armgs.team
+  - DOMAIN-SUFFIX,bargipsy.com
+  - DOMAIN-SUFFIX,boosty.to
+  - DOMAIN-SUFFIX,donationalerts.com
+  - DOMAIN-SUFFIX,lovina.app
+  - DOMAIN-SUFFIX,memealerts.com
+  - DOMAIN-SUFFIX,movika.com
+  - DOMAIN-SUFFIX,tamtam.chat
+  - DOMAIN-SUFFIX,vk-apps.com
+  - DOMAIN-SUFFIX,vk.company
+  - DOMAIN-SUFFIX,vk.kz
+  - DOMAIN-SUFFIX,vk.team
+  - DOMAIN-SUFFIX,vkclips.app
+  - DOMAIN-SUFFIX,vkgo.app
+  - DOMAIN-SUFFIX,vklive.app
+  - DOMAIN-SUFFIX,vkworkspace.kz
+  - DOMAIN-SUFFIX,yclients.com
+  - DOMAIN-SUFFIX,justveryok.com
+  - DOMAIN-SUFFIX,keyboardmen.com
+  - DOMAIN-SUFFIX,sayeasy.eu
+  - DOMAIN-SUFFIX,attachmy.com
+  - DOMAIN-SUFFIX,datacloudmy.com
+  - DOMAIN-SUFFIX,mpgw-my.com
+  - DOMAIN-SUFFIX,mycdn.me
+  - DOMAIN-SUFFIX,mytopf.com
+  - DOMAIN-SUFFIX,smailru.net
+  - DOMAIN-SUFFIX,staticmy.com
+  - DOMAIN-SUFFIX,vmailru.net
+  - DOMAIN-SUFFIX,cups.online
+  - DOMAIN-SUFFIX,algoritmika.org
+  - DOMAIN-SUFFIX,skbx.pro
+  - DOMAIN-SUFFIX,skillbox.pro
+  - DOMAIN-SUFFIX,umschool.net
+  - DOMAIN-SUFFIX,epicevents.gg
+  - DOMAIN-SUFFIX,esforce.com
+  - DOMAIN-SUFFIX,ruhub.tv
+  - DOMAIN-SUFFIX,ciciq.net
+  - DOMAIN-SUFFIX,icq.com
+  - DOMAIN-SUFFIX,icq.im
+  - DOMAIN-SUFFIX,xn-----6kc7adj0c9esa.com
+  - DOMAIN-SUFFIX,xn----7sbaba0dc6cdn7cxcj.com
+  - DOMAIN-SUFFIX,xn----7sbabae2a0bnvtsfr4loc.com
+  - DOMAIN-SUFFIX,xn----7sbbab6bregnh7b8if5b.com
+  - DOMAIN-SUFFIX,xn----7sbbamm1bv2bh7i.com
+  - DOMAIN-SUFFIX,xn----8sbaroledu6bi7j.com
+  - DOMAIN-SUFFIX,xn----8sbeoy5bze.com
+  - DOMAIN-SUFFIX,xn--80aqcf7a6do.com
+  - DOMAIN-SUFFIX,dev-my.com
+  - DOMAIN-SUFFIX,rustore.team
+  - DOMAIN-SUFFIX,rustore.tv
+  - DOMAIN-SUFFIX,tarantool.io
+  - DOMAIN-SUFFIX,aodahl.com
+  - DOMAIN-SUFFIX,dahlmessenger.com
+  - DOMAIN-SUFFIX,uma.media
+  - DOMAIN-SUFFIX,vkplay.live
+  - DOMAIN-SUFFIX,youla.io
+  - DOMAIN-SUFFIX,odnoklassniki.eu
+  - DOMAIN-SUFFIX,odnoklassniki.lv
+  - DOMAIN-SUFFIX,odnoklasniki.by
+  - DOMAIN-SUFFIX,odnoklassniki.am
+  - DOMAIN-SUFFIX,odnoklassniki.by
+  - DOMAIN-SUFFIX,odnoklassniki.tj
+  - DOMAIN-SUFFIX,ok.me
+  - DOMAIN-SUFFIX,okl.lt
+  - DOMAIN-SUFFIX,mvk.com
+  - DOMAIN-SUFFIX,vk.cc
+  - DOMAIN-SUFFIX,vk.design
+  - DOMAIN-SUFFIX,vk.link
+  - DOMAIN-SUFFIX,vkontakte.com
+  - DOMAIN-SUFFIX,cdn-vk.net
+  - DOMAIN-SUFFIX,vk-cdn.me
+  - DOMAIN-SUFFIX,vk-portal.net
+  - DOMAIN-SUFFIX,vkcache.com
+  - DOMAIN-SUFFIX,vkcdnservice.com
+  - DOMAIN-SUFFIX,vkuseraudio.com
+  - DOMAIN-SUFFIX,vkuserlive.com
+  - DOMAIN-SUFFIX,vkuserlive.net
+  - DOMAIN-SUFFIX,vkuservideo.com
+  - DOMAIN-SUFFIX,vkmessenger.app
+  - DOMAIN-SUFFIX,vkpay.app
+  - DOMAIN-SUFFIX,vkpay.com
+  - DOMAIN-SUFFIX,vkpay.io
+  - DOMAIN-SUFFIX,odnoklassniki.co.ee
   - DOMAIN-SUFFIX,my.com
-  - DOMAIN-SUFFIX,my.games
   - DOMAIN-SUFFIX,allods.com
-  - DOMAIN-SUFFIX,warface.com
   - DOMAIN-SUFFIX,imgsmail.ru
   - DOMAIN-SUFFIX,okko.tv
-  - DOMAIN-SUFFIX,domclick.com
   - DOMAIN-SUFFIX,sbermarket.com
   - DOMAIN-SUFFIX,ozon.com
-  - DOMAIN-SUFFIX,wildberries.com
   - DOMAIN-SUFFIX,wildberries.eu
   - DOMAIN-SUFFIX,wbbasket.ru
   - DOMAIN-SUFFIX,wbbasket.com
   - DOMAIN-SUFFIX,kazanexpress.com
-  - DOMAIN-SUFFIX,lamoda.com
   - DOMAIN-SUFFIX,lamoda.kz
   - DOMAIN-SUFFIX,lamoda.by
   - DOMAIN-SUFFIX,aliexpress.ru
@@ -71,6 +203,4 @@ payload:
   - DOMAIN-SUFFIX,2gis.ae
   - DOMAIN-SUFFIX,kinopoisk-ott.com
   - DOMAIN-SUFFIX,ott-cdn.ru
-  - DOMAIN-SUFFIX,strm.yandex.net
   - DOMAIN-SUFFIX,t2.ru
-  - DOMAIN-SUFFIX,beeline.com

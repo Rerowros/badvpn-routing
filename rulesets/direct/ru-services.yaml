@@ -1,0 +1,587 @@
+# BadVPN: российские сервисы вне .ru/.su/.рф и их CDN -> DIRECT. v2.
+# Собрано build.py из ru-catalog.json (DoH с ECS RU + whois.cymru + публичные списки) 2026-09-27.
+# Сжато до зарегистрированного домена (PSL), если он сам принадлежит RU-сервису.
+# Выкинуто: заблокированное в РФ (runetfreedom RU-BLOCKED-ALL, itdoginfo, legiz), ru-exceptions,
+# геоблок; всё, что шаблон намеренно шлёт в VPN; облака и хостинг с чужими клиентами (консоли —
+# точными DOMAIN); трекеры, реклама и виджеты (см. candidates/ru-trackers.yaml); конструкторы сайтов.
+# Место в шаблоне: RULE-SET,BadVPN-RU-Services,DIRECT сразу перед RULE-SET,BadVPN-RU-Core,DIRECT.
+# Отсортировано по домену. Версия без комментариев — ru-services.min.yaml.
+payload:
+  - DOMAIN-SUFFIX,1917live.red # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,1cfresh.com # Антивирусы, ИБ, бизнес-софт: 1С, Контур, СБИС, Диадок
+  - DOMAIN-SUFFIX,1internet.tv # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,1tv.com # Кинотеатры, музыка, книги: Смотрёшка, НТВ-Плюс, Первый, Смотрим
+  - DOMAIN-SUFFIX,24h.tv # Кинотеатры, музыка, книги: Добор из списков: развлечения
+  - DOMAIN-SUFFIX,2gis.ae # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,2gis.am # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,2gis.az # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,2gis.by # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,2gis.com # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,2gis.cz # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,2gis.ge # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,2gis.kg # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,2gis.kz # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,2gis.tech # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,2gis.tj # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,2gis.uz # Объявления, недвижимость, работа, карты: 2ГИС
+  - DOMAIN-SUFFIX,3ebra.net # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,4epenaxa.com # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,4meeting.me # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,5post.market # Маркетплейсы, ритейл, доставка: X5: Пятёрочка, Перекрёсток, Чижик
+  - DOMAIN-SUFFIX,acmvid.com # Маркетплейсы, ритейл, доставка: Электроника: DNS, М.Видео, Эльдорадо, Ситилинк
+  - DOMAIN-SUFFIX,actualidad-rt.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,adygtelecom.com # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,aeroflot.com # Авиа, РЖД, билеты, путешествия: Аэрофлот
+  - DOMAIN-SUFFIX,ahilesva.info # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,alefbank.com # Банки и платёжка: Добор из списков: прочие банки
+  - DOMAIN-SUFFIX,alfa-bank.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,alfa-bank.info # Банки и платёжка: Альфа-Банк
+  - DOMAIN-SUFFIX,alfa-finance.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,alfa-fx.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,alfa.me # Банки и платёжка: Альфа-Банк
+  - DOMAIN-SUFFIX,alfabank.com # Банки и платёжка: Альфа-Банк
+  - DOMAIN-SUFFIX,alfabank.st # Банки и платёжка: Добор из списков: прочие банки
+  - DOMAIN-SUFFIX,alfafinance.biz # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,alfafuture.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,alfafx.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,alfaprivate.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,algoritmika.org # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,allods.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,anytimeru.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,aodahl.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,apptrackpets.com # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,armgs.team # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,artel.watch # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,arteldoc.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,arteldoc.tv # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,atomyze.tech # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,attachmy.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,autoru.me # Яндекс-экосистема: Авто.ру и Яндекс Недвижимость
+  - DOMAIN-SUFFIX,avito.com # Объявления, недвижимость, работа, карты: Авито
+  - DOMAIN-SUFFIX,avito.st # Объявления, недвижимость, работа, карты: Авито
+  - DOMAIN-SUFFIX,avito.tech # Объявления, недвижимость, работа, карты: Авито
+  - DOMAIN-SUFFIX,baltnews.com # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
+  - DOMAIN-SUFFIX,baltnews.lt # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
+  - DOMAIN-SUFFIX,banka-ui.dev # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,baranky.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,bargipsy.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,bcs-bank.com # Банки и платёжка: Инвестиции БКС и Финам
+  - DOMAIN,beget.com # Облака: только консоль/сайт: Beget: сайт
+  - DOMAIN-SUFFIX,best2pay.net # Банки и платёжка: PayMaster, Uniteller, Payture
+  - DOMAIN-SUFFIX,beta-bank.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,bi.zone # Антифрод, антибот, платёжные шлюзы: BI.ZONE, F.A.C.C.T., Positive Technologies
+  - DOMAIN-SUFFIX,book1917.live # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,bps-sberbank.by # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,bronevik.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,cabconnect.org # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,cdek.shopping # Маркетплейсы, ритейл, доставка: СДЭК, Boxberry, Достависта
+  - DOMAIN-SUFFIX,cdn-vk.net # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,championat.com # Соцсети, почта, мессенджеры: Rambler и Пикабу
+  - DOMAIN-SUFFIX,chizhik.club # Маркетплейсы, ритейл, доставка: X5: Пятёрочка, Перекрёсток, Чижик
+  - DOMAIN-SUFFIX,cian.site # Объявления, недвижимость, работа, карты: ЦИАН
+  - DOMAIN-SUFFIX,cian.tech # Объявления, недвижимость, работа, карты: ЦИАН
+  - DOMAIN-SUFFIX,ciciq.net # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,clstorage.net # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,cm.expert # Яндекс-экосистема: Авто.ру и Яндекс Недвижимость
+  - DOMAIN-SUFFIX,comss.net # Кинотеатры, музыка, книги: Добор из списков: comssone
+  - DOMAIN-SUFFIX,comss.org # Кинотеатры, музыка, книги: Добор из списков: comssone
+  - DOMAIN,console.k2.cloud # Облака: только консоль/сайт: K2 Cloud: консоль
+  - DOMAIN,console.yandex.cloud # Облака: только консоль/сайт: Yandex Cloud: консоль
+  - DOMAIN-SUFFIX,corp.express # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN,cp.beget.com # Облака: только консоль/сайт: Beget: панель
+  - DOMAIN-SUFFIX,cups.online # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,dahlmessenger.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,datacloudmy.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,dbo-dengi.online # Операторы связи и их ЛК: МТС
+  - DOMAIN-SUFFIX,de-rt.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,de-rt.org # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,de-rtnews.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,de-rtnews.net # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,dert.online # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,dert.site # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,dert.tech # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,dev-my.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,dodopizza.com # Маркетплейсы, ритейл, доставка: Добор из списков: ритейл
+  - DOMAIN-SUFFIX,domclick.tech # Объявления, недвижимость, работа, карты: ДомКлик
+  - DOMAIN-SUFFIX,donationalerts.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,driveawaytaxi.org # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,drweb-av.de # Антивирусы, ИБ, бизнес-софт: Dr.Web
+  - DOMAIN-SUFFIX,drweb-av.it # Антивирусы, ИБ, бизнес-софт: Dr.Web
+  - DOMAIN-SUFFIX,drweb-av.pl # Антивирусы, ИБ, бизнес-софт: Dr.Web
+  - DOMAIN-SUFFIX,drweb.by # Антивирусы, ИБ, бизнес-софт: Dr.Web
+  - DOMAIN-SUFFIX,drweb.uz # Антивирусы, ИБ, бизнес-софт: Dr.Web
+  - DOMAIN-SUFFIX,eadaily.com # Кинотеатры, музыка, книги: Добор из списков: СМИ
+  - DOMAIN-SUFFIX,eadaily.info # Кинотеатры, музыка, книги: Добор из списков: СМИ
+  - DOMAIN-SUFFIX,eadaily.net # Кинотеатры, музыка, книги: Добор из списков: СМИ
+  - DOMAIN-SUFFIX,eaptechka.online # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,edadeal.io # Маркетплейсы, ритейл, доставка: Едадил и кешбэк
+  - DOMAIN-SUFFIX,edu22.info # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: прочие госсайты
+  - DOMAIN-SUFFIX,emias.info # Госуслуги, ФНС, мос.ру, ЕМИАС: ЕМИАС и медицина
+  - DOMAIN-SUFFIX,epicevents.gg # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,es-rt.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,esforce.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,esrt.online # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,esrt.press # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,esrt.site # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,esrt.space # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,esrt.tech # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,esrt.website # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,evrasia.rest # Маркетплейсы, ритейл, доставка: Добор из списков: ритейл
+  - DOMAIN-SUFFIX,express.ms # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,f6.dev # Антивирусы, ИБ, бизнес-софт: Добор из списков: group-ib
+  - DOMAIN-SUFFIX,f6.security # Антивирусы, ИБ, бизнес-софт: Добор из списков: group-ib
+  - DOMAIN-SUFFIX,fishki.net # СМИ: Фишки (добор 27.09)
+  - DOMAIN-SUFFIX,flowwow.com # Маркетплейсы, ритейл, доставка: Flowwow, Литрес-магазин, прочий e-com
+  - DOMAIN-SUFFIX,flysmartavia.com # Авиа, РЖД, билеты, путешествия: Уральские, Россия, UTair, Nordwind, Азимут
+  - DOMAIN-SUFFIX,fon.bet # Кинотеатры, музыка, книги: Добор из списков: fonbet
+  - DOMAIN-SUFFIX,fon.promo # Кинотеатры, музыка, книги: Добор из списков: fonbet
+  - DOMAIN-SUFFIX,foto-planeta.com # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,freeassange.tech # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,freede.tech # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,freedert.online # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,gazprom-media.com # Кинотеатры, музыка, книги: PREMIER (ТНТ)
+  - DOMAIN-SUFFIX,gazprom.com # АЗС и топливо: Газпром (добор 27.09)
+  - DOMAIN-SUFFIX,gazprombank.investments # Банки и платёжка: Газпромбанк
+  - DOMAIN-SUFFIX,gazprombank.tech # Банки и платёжка: Газпромбанк
+  - DOMAIN-SUFFIX,genotek.am # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: genotek-ru
+  - DOMAIN-SUFFIX,genotek.es # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: genotek-ru
+  - DOMAIN-SUFFIX,genotek.eu # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: genotek-ru
+  - DOMAIN-SUFFIX,genotek.health # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: genotek-ru
+  - DOMAIN-SUFFIX,getsynapse.io # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,giga.chat # Объявления, недвижимость, работа, карты: Сбер Салют, GigaChat, SberDevices
+  - DOMAIN-SUFFIX,gogettaxi.org # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,goldapple.kz # Маркетплейсы, ритейл, доставка: Золотое яблоко, Летуаль
+  - DOMAIN-SUFFIX,gorzdrav.org # Госуслуги, ФНС, мос.ру, ЕМИАС: ЕМИАС и медицина
+  - DOMAIN-SUFFIX,goup.ai # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,gramotei.online # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: образование
+  - DOMAIN-SUFFIX,green-box-tv.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,greywallpass.com # Авиа, РЖД, билеты, путешествия: Добор из списков: путешествия
+  - DOMAIN-SUFFIX,habr.io # СМИ: Хабр (добор 27.09)
+  - DOMAIN-SUFFIX,hh.by # Объявления, недвижимость, работа, карты: hh.ru
+  - DOMAIN-SUFFIX,hh.uz # Объявления, недвижимость, работа, карты: hh.ru
+  - DOMAIN-SUFFIX,home.bank # Банки и платёжка: Хоум Банк (Хоум Кредит)
+  - DOMAIN-SUFFIX,hva.im # Банки и платёжка: Добор из списков: прочие банки
+  - DOMAIN-SUFFIX,icq.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,icq.im # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,interfax.com # СМИ: Интерфакс (добор 27.09)
+  - DOMAIN-SUFFIX,ivi.tv # Кинотеатры, музыка, книги: ivi
+  - DOMAIN-SUFFIX,ivicdn.tv # Кинотеатры, музыка, книги: Добор из списков: развлечения
+  - DOMAIN-SUFFIX,ixbt.com # Кинотеатры, музыка, книги: Добор из списков: ixbt
+  - DOMAIN-SUFFIX,ixbt.games # Кинотеатры, музыка, книги: Добор из списков: ixbt
+  - DOMAIN-SUFFIX,ixbt.market # Кинотеатры, музыка, книги: Добор из списков: ixbt
+  - DOMAIN-SUFFIX,ixbt.media # Кинотеатры, музыка, книги: Добор из списков: ixbt
+  - DOMAIN-SUFFIX,ixbt.pro # Кинотеатры, музыка, книги: Добор из списков: ixbt
+  - DOMAIN-SUFFIX,ixbt.shop # Кинотеатры, музыка, книги: Добор из списков: ixbt
+  - DOMAIN-SUFFIX,ixbt.site # Кинотеатры, музыка, книги: Добор из списков: ixbt
+  - DOMAIN-SUFFIX,ixbt.video # Кинотеатры, музыка, книги: Добор из списков: ixbt
+  - DOMAIN-SUFFIX,jinrieluosi.cn # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
+  - DOMAIN-SUFFIX,jump.taxi # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,justveryok.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN,k2.cloud # Облака: только консоль/сайт: K2 Cloud: сайт
+  - DOMAIN-SUFFIX,kas.pr # Антивирусы, ИБ, бизнес-софт: Лаборатория Касперского
+  - DOMAIN-SUFFIX,kazanexpress.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,keyboardmen.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,khangar.net # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,kinopoisk-ott.com # Яндекс-экосистема: Кинопоиск
+  - DOMAIN-SUFFIX,kontur-inc.com # Антивирусы, ИБ, бизнес-софт: 1С, Контур, СБИС, Диадок
+  - DOMAIN-SUFFIX,koshelek.app # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,ktech.team # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,kudago.com # Авиа, РЖД, билеты, путешествия: Билеты: Кассир, Яндекс Афиша, МТС Live, Ticketland
+  - DOMAIN-SUFFIX,lamoda.by # Маркетплейсы, ритейл, доставка: Lamoda
+  - DOMAIN-SUFFIX,lamoda.kz # Маркетплейсы, ритейл, доставка: Lamoda
+  - DOMAIN-SUFFIX,lenta.com # Маркетплейсы, ритейл, доставка: Лента
+  - DOMAIN-SUFFIX,lenta.tech # Маркетплейсы, ритейл, доставка: Лента
+  - DOMAIN-SUFFIX,level.travel # Авиа, РЖД, билеты, путешествия: Островок (ETG), Суточно, Level.Travel
+  - DOMAIN-SUFFIX,limehd.tv # Кинотеатры, музыка, книги: Смотрёшка, НТВ-Плюс, Первый, Смотрим
+  - DOMAIN-SUFFIX,litres.com # Кинотеатры, музыка, книги: Литрес, MyBook, Литрес:Слушай
+  - DOMAIN-SUFFIX,lizaalert.org # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,lmru.tech # Маркетплейсы, ритейл, доставка: Детский мир, Спортмастер, Леман Про
+  - DOMAIN-SUFFIX,lovina.app # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,lukoil.com # АЗС и топливо: Лукойл (добор 27.09)
+  - DOMAIN-SUFFIX,magnit.com # Маркетплейсы, ритейл, доставка: Магнит
+  - DOMAIN-SUFFIX,magnit.tech # Маркетплейсы, ритейл, доставка: Магнит
+  - DOMAIN-SUFFIX,medsi.com # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: медицина
+  - DOMAIN-SUFFIX,megafon.com # Операторы связи и их ЛК: МегаФон и Yota
+  - DOMAIN-SUFFIX,megafon.tv # Операторы связи и их ЛК: МегаФон и Yota
+  - DOMAIN-SUFFIX,megamarket.tech # Маркетплейсы, ритейл, доставка: Мегамаркет
+  - DOMAIN-SUFFIX,mel.fm # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: образование
+  - DOMAIN-SUFFIX,memealerts.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,meteum.ai # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,mfa.center # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,mir24.tv # СМИ: Мир 24 (добор 27.09)
+  - DOMAIN-SUFFIX,moedelo.org # Антивирусы, ИБ, бизнес-софт: 1С, Контур, СБИС, Диадок
+  - DOMAIN-SUFFIX,moex.com # Банки и платёжка: Мосбиржа и Финуслуги
+  - DOMAIN-SUFFIX,more.tv # Кинотеатры, музыка, книги: more.tv и СТС
+  - DOMAIN-SUFFIX,movika.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,mp.world # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,mpgw-my.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,mts-ws.net # Операторы связи и их ЛК: МТС
+  - DOMAIN-SUFFIX,mvideo.edna.io # Маркетплейсы, ритейл, доставка: Электроника: DNS, М.Видео, Эльдорадо, Ситилинк
+  - DOMAIN-SUFFIX,mvk.com # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,my.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,mybook.io # Кинотеатры, музыка, книги: Литрес, MyBook, Литрес:Слушай
+  - DOMAIN-SUFFIX,myoffice.team # Антивирусы, ИБ, бизнес-софт: Добор из списков: myoffice-ru
+  - DOMAIN-SUFFIX,mytopf.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,netcraze.club # Антивирусы, ИБ, бизнес-софт: Добор из списков: netcraze
+  - DOMAIN-SUFFIX,netcraze.link # Антивирусы, ИБ, бизнес-софт: Добор из списков: netcraze
+  - DOMAIN-SUFFIX,netcraze.pro # Антивирусы, ИБ, бизнес-софт: Добор из списков: netcraze
+  - DOMAIN-SUFFIX,netmonet.co # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,noticias-rt.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,notimundo.press # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,ntvplus.tv # Кинотеатры, музыка, книги: Смотрёшка, НТВ-Плюс, Первый, Смотрим
+  - DOMAIN-SUFFIX,odnoklasniki.by # Соцсети, почта, мессенджеры: Одноклассники
+  - DOMAIN-SUFFIX,odnoklassniki.am # Соцсети, почта, мессенджеры: Одноклассники
+  - DOMAIN-SUFFIX,odnoklassniki.by # Соцсети, почта, мессенджеры: Одноклассники
+  - DOMAIN-SUFFIX,odnoklassniki.co.ee # Соцсети, почта, мессенджеры: Одноклассники
+  - DOMAIN-SUFFIX,odnoklassniki.eu # Соцсети, почта, мессенджеры: Одноклассники
+  - DOMAIN-SUFFIX,odnoklassniki.lv # Соцсети, почта, мессенджеры: Одноклассники
+  - DOMAIN-SUFFIX,odnoklassniki.tj # Соцсети, почта, мессенджеры: Одноклассники
+  - DOMAIN-SUFFIX,ognihome.com # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,ok.me # Соцсети, почта, мессенджеры: Одноклассники
+  - DOMAIN-SUFFIX,okko.sport # Кинотеатры, музыка, книги: Okko
+  - DOMAIN-SUFFIX,okko.tv # Кинотеатры, музыка, книги: Okko
+  - DOMAIN-SUFFIX,okkoapi.tv # Кинотеатры, музыка, книги: Okko
+  - DOMAIN-SUFFIX,okl.lt # Соцсети, почта, мессенджеры: Одноклассники
+  - DOMAIN-SUFFIX,okolo.app # Маркетплейсы, ритейл, доставка: X5: Пятёрочка, Перекрёсток, Чижик
+  - DOMAIN-SUFFIX,opennet.dev # Соцсети, почта, мессенджеры: Добор из списков: форумы
+  - DOMAIN-SUFFIX,ostin.com # Маркетплейсы, ритейл, доставка: Добор из списков: ритейл
+  - DOMAIN-SUFFIX,ostrovok.com # Авиа, РЖД, билеты, путешествия: Островок (ETG), Суточно, Level.Travel
+  - DOMAIN-SUFFIX,ostrovok.tech # Авиа, РЖД, билеты, путешествия: Островок (ETG), Суточно, Level.Travel
+  - DOMAIN-SUFFIX,ozon.by # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.com # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.com.by # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.com.kz # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.dev # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.express # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.global # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.kz # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.market # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.tech # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.tm # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.travel # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozon.uz # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozoncamp.pro # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozoncom.by # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozonglobalevents.com # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozonpartners.by # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozonrocet.by # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozonroket.by # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozonru.co.il # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozonru.com # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozonru.eu # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozonru.me # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,ozonusercontent.com # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,pay.mandarinbank.com # Антифрод, антибот, платёжные шлюзы: 3-D Secure и эквайринг банков
+  - DOMAIN-SUFFIX,payture.com # Банки и платёжка: PayMaster, Uniteller, Payture
+  - DOMAIN-SUFFIX,paywb.com # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,perekrestok.com # Маркетплейсы, ритейл, доставка: X5: Пятёрочка, Перекрёсток, Чижик
+  - DOMAIN-SUFFIX,pobeda.aero # Авиа, РЖД, билеты, путешествия: Победа
+  - DOMAIN-SUFFIX,pobeda.page # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,poudobnee.com # Объявления, недвижимость, работа, карты: ЦИАН
+  - DOMAIN-SUFFIX,premier.one # Кинотеатры, музыка, книги: PREMIER (ТНТ)
+  - DOMAIN-SUFFIX,prodcontest.com # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,promodj.com # Кинотеатры, музыка, книги: Добор из списков: развлечения
+  - DOMAIN-SUFFIX,ptsecurity.com # Антифрод, антибот, платёжные шлюзы: BI.ZONE, F.A.C.C.T., Positive Technologies
+  - DOMAIN-SUFFIX,public.express # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,pvubank.com # Банки и платёжка: Добор из списков: прочие банки
+  - DOMAIN-SUFFIX,pz.help # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: медицина
+  - DOMAIN-SUFFIX,rabota.by # Объявления, недвижимость, работа, карты: hh.ru
+  - DOMAIN-SUFFIX,rbsuat.com # Антифрод, антибот, платёжные шлюзы: 3-D Secure и эквайринг банков
+  - DOMAIN-SUFFIX,rbth.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,reaviz.com # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: медицина
+  - DOMAIN-SUFFIX,redheadsound.studio # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN,reg.com # Облака: только консоль/сайт: REG.RU: международный сайт
+  - DOMAIN-SUFFIX,ren.tv # Кинотеатры, музыка, книги: Смотрёшка, НТВ-Плюс, Первый, Смотрим
+  - DOMAIN-SUFFIX,reso-med.com # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: медицина
+  - DOMAIN-SUFFIX,robokassa.com # Банки и платёжка: Робокасса
+  - DOMAIN-SUFFIX,rocketozon.by # Маркетплейсы, ритейл, доставка: Ozon
+  - DOMAIN-SUFFIX,romanovs100.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rosbank-credit.com # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,rosneft.com # АЗС и топливо: Роснефть (добор 27.09)
+  - DOMAIN-SUFFIX,rossiyasegodnya.com # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
+  - DOMAIN-SUFFIX,rostaxi.org # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,rt-school.online # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rt.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rt.rs # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtarabic.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtarabic.net # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtarabic.org # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtbrasil.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtbrasil.info # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.agency # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.expert # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.info # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.life # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.live # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.me # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.media # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.online # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.org # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.press # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.site # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.team # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.tech # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.website # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.world # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtde.xyz # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtdefree.info # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtdefree.me # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtdefree.online # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtdefree.tech # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtdoc.tv # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtdocumentary.online # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rteam.tech # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtenafrique.tv # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtenfrancais.tv # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtenfrance.tv # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtespanol.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtfrance.tv # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtnewsde.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtnewsde.online # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtnewsde.pro # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtnewsde.site # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtnewsde.tech # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtnewsru.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rtrunews.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,ruhub.tv # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,runewsrt.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,ruptly.agency # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,ruptly.video # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rurtnews.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,russia.tv # Кинотеатры, музыка, книги: ВГТРК (добор 27.09)
+  - DOMAIN-SUFFIX,russiabeyond.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,russiacalling.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,russiaislove.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,russiatoday.net # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,rustore.team # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,rustore.tech # Магазины приложений: RuStore
+  - DOMAIN-SUFFIX,rustore.tv # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,rutube.sport # Соцсети, почта, мессенджеры: RUTUBE
+  - DOMAIN-SUFFIX,rwbautomation.tech # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,s7airlines.com # Авиа, РЖД, билеты, путешествия: S7 Airlines
+  - DOMAIN-SUFFIX,safeliner.tech # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,sage-observability.tech # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,samokat.tech # Маркетплейсы, ритейл, доставка: Самокат
+  - DOMAIN-SUFFIX,sayeasy.eu # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,sber-bank.by # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,sber-zvuk.com # Кинотеатры, музыка, книги: Звук (Сбер)
+  - DOMAIN-SUFFIX,sber.me # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,sber.pro # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,sber.world # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,sberauto.com # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,sberbank-tele.com # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,sberbank.com # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,sberbusiness.live # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,sbermarket.com # Маркетплейсы, ритейл, доставка: Купер (СберМаркет)
+  - DOMAIN-SUFFIX,securelist.com # Антивирусы, ИБ, бизнес-софт: Лаборатория Касперского
+  - DOMAIN,selectel.com # Облака: только консоль/сайт: Selectel: сайт
+  - DOMAIN-SUFFIX,shedevrum.ai # Яндекс-экосистема: Яндекс Игры, Практикум, Книги (Букмейт)
+  - DOMAIN-SUFFIX,shop-rt.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,shopstory.live # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,sirius.online # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,sistema-capital.com # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,skbx.pro # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,skillbox.pro # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,sky.pro # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: skyeng
+  - DOMAIN-SUFFIX,slavicstar.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,smailru.net # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,smartmed.pro # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: медицина
+  - DOMAIN-SUFFIX,smena.cafe # Маркетплейсы, ритейл, доставка: Добор из списков: smena
+  - DOMAIN-SUFFIX,smotreshka.tv # Кинотеатры, музыка, книги: Смотрёшка, НТВ-Плюс, Первый, Смотрим
+  - DOMAIN-SUFFIX,smotrim.tv # Кинотеатры, музыка, книги: ВГТРК / Смотрим (добор 27.09)
+  - DOMAIN-SUFFIX,sn-esp.site # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,sokolov.io # Маркетплейсы, ритейл, доставка: Добор из списков: sokolov
+  - DOMAIN-SUFFIX,sovcombank.com # Банки и платёжка: Совкомбанк и Халва
+  - DOMAIN-SUFFIX,spasibo.digital # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,spasibo.market # Банки и платёжка: Сбербанк
+  - DOMAIN-SUFFIX,sportmaster.tech # Маркетплейсы, ритейл, доставка: Детский мир, Спортмастер, Леман Про
+  - DOMAIN-SUFFIX,sputnikglobe.com # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
+  - DOMAIN-SUFFIX,sputnikimages.com # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
+  - DOMAIN-SUFFIX,sputnikmediabank.com # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
+  - DOMAIN-SUFFIX,sputniknews.com # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
+  - DOMAIN-SUFFIX,srv-hub.org # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,standoff365.com # Антивирусы, ИБ, бизнес-софт: Добор из списков: positive-technologies
+  - DOMAIN-SUFFIX,start.film # Кинотеатры, музыка, книги: START
+  - DOMAIN-SUFFIX,static-storage.net # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,staticmy.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,stepik.org # Образование: Stepik (добор 27.09)
+  - DOMAIN-SUFFIX,swentr.site # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,t-finance.group # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,t-tech.dev # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,t-tech.team # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,t.finance # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN,t1.cloud # Облака: только консоль/сайт: T1 Cloud: сайт
+  - DOMAIN-SUFFIX,tamtam.chat # Соцсети, почта, мессенджеры: ТамТам и VK Мессенджер
+  - DOMAIN-SUFFIX,tarantool.io # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,tass.com # СМИ: ТАСС (добор 27.09)
+  - DOMAIN-SUFFIX,taxiaid.org # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,taxiguru.org # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,taxitax.org # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,taxsee.com # Такси, каршеринг, самокаты, транспорт: Такси Максим
+  - DOMAIN-SUFFIX,tbank-online.com # Антифрод, антибот, платёжные шлюзы: Сбер-антифрод и JS-проверки банков
+  - DOMAIN,timeweb.cloud # Облака: только консоль/сайт: Timeweb Cloud: сайт и панель
+  - DOMAIN,timeweb.com # Облака: только консоль/сайт: Timeweb: сайт
+  - DOMAIN-SUFFIX,tinkoff-group.com # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,tinkoff.ai # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,tinkoff.com # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,tinkoffmobile.com # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,tips.tips # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,tochka.com # Банки и платёжка: Добор из списков: прочие банки
+  - DOMAIN-SUFFIX,tok.media # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
+  - DOMAIN-SUFFIX,tt.me # Соцсети, почта, мессенджеры: ТамТам и VK Мессенджер
+  - DOMAIN-SUFFIX,tutu.tech # Авиа, РЖД, билеты, путешествия: Туту, Аэроэкспресс
+  - DOMAIN-SUFFIX,tutu.travel # Авиа, РЖД, билеты, путешествия: Туту, Аэроэкспресс
+  - DOMAIN-SUFFIX,tvoyodbo.online # Операторы связи и их ЛК: МТС
+  - DOMAIN-SUFFIX,uma.media # Российские CDN: CDN VK/OK/Mail.ru
+  - DOMAIN-SUFFIX,umschool.net # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,unidraw.io # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,unirest.tech # Маркетплейсы, ритейл, доставка: Добор из списков: ритейл
+  - DOMAIN-SUFFIX,uralairlines.com # Авиа, РЖД, билеты, путешествия: Уральские, Россия, UTair, Nordwind, Азимут
+  - DOMAIN-SUFFIX,userapi.com # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,utair.com # Авиа, РЖД, билеты, путешествия: ЮТэйр (добор 27.09)
+  - DOMAIN-SUFFIX,vgtrk.com # Кинотеатры, музыка, книги: ВГТРК (добор 27.09)
+  - DOMAIN-SUFFIX,vitrina.tv # Кинотеатры, музыка, книги: Смотрёшка, НТВ-Плюс, Первый, Смотрим
+  - DOMAIN-SUFFIX,vk-apps.com # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vk-cdn.com # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vk-cdn.me # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vk-cdn.net # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vk-portal.net # Российские CDN: CDN VK/OK/Mail.ru
+  - DOMAIN-SUFFIX,vk.cc # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vk.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vk.company # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vk.design # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vk.kz # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vk.link # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vk.me # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vk.team # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vk.video # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkcache.com # Российские CDN: CDN VK/OK/Mail.ru
+  - DOMAIN-SUFFIX,vkcdnservice.com # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkclips.app # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vkgo.app # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vklive.app # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vkmessenger.app # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkmessenger.com # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkontakte.com # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkpay.app # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkpay.com # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkpay.io # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkplay.live # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vkteams.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vkuser.net # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkuseraudio.com # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkuseraudio.net # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkuserlive.com # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkuserlive.net # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkuservideo.com # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkuservideo.net # Соцсети, почта, мессенджеры: ВКонтакте
+  - DOMAIN-SUFFIX,vkusvill.tech # Маркетплейсы, ритейл, доставка: ВкусВилл
+  - DOMAIN-SUFFIX,vkworkspace.kz # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vmailru.net # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vtb-russia.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,vtb.bank.in # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,vtb.com # Банки и платёжка: ВТБ
+  - DOMAIN-SUFFIX,vtb.promo # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,vtb24.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,vtbcareer.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,vtbindia.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,vtbrussia.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,warehouse.domains # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,watchingthehawks.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,wb.am # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wb.kg # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wb.kz # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wbautomation.tech # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wbcontent.net # Российские CDN: CDN маркетплейсов
+  - DOMAIN-SUFFIX,wbr.by # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wbstatic.net # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wbwh.tech # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wibes.com # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.am # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.by # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.co.il # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.es # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.eu # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.ge # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.kg # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.kz # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.lt # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.tj # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.tm # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.uz # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wink.am # Кинотеатры, музыка, книги: Wink
+  - DOMAIN-SUFFIX,worldcuprussia.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,x5.tech # Маркетплейсы, ритейл, доставка: X5: Пятёрочка, Перекрёсток, Чижик
+  - DOMAIN-SUFFIX,xlnk.ms # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,xn-----6kc7adj0c9esa.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,xn----7sbaba0dc6cdn7cxcj.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,xn----7sbabae2a0bnvtsfr4loc.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,xn----7sbbab6bregnh7b8if5b.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,xn----7sbbamm1bv2bh7i.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,xn----8sbaroledu6bi7j.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,xn----8sbeoy5bze.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,xn--80aqcf7a6do.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,xn--90ab.com # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,xn--90aifd0az.shop # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,xn--90aifd0azb.xn--p1acf # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,xn--b1aechhj6bof8g5a.site # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,xn--d1abkf4ap.fun # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,xn--h1ao.site # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,ya.cc # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yadi.sk # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yakutia.aero # Авиа, РЖД, билеты, путешествия: Уральские, Россия, UTair, Nordwind, Азимут
+  - DOMAIN-SUFFIX,yandex # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex-bank.net # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.aero # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.asia # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.az # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.by # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN,yandex.cloud # Облака: только консоль/сайт: Yandex Cloud: сайт
+  - DOMAIN-SUFFIX,yandex.co.il # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.com # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.com.am # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.com.ge # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.com.tr # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.de # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.ee # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.eu # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.fi # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.fr # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.it # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.jobs # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.kg # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.kz # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.lt # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.lv # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.market # Маркетплейсы, ритейл, доставка: Яндекс Маркет
+  - DOMAIN-SUFFIX,yandex.md # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.mobi # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.net # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.org # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.pl # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.st # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.sx # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.tj # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.tm # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.tr # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandex.uz # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandexwebcache.net # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yango-b2b.com # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yango-team.com # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yango.tech # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yappy.media # Соцсети, почта, мессенджеры: Yappy
+  - DOMAIN-SUFFIX,yastat.net # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yastatic.net # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yclients.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,yndx.net # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yookassa.com # Банки и платёжка: ЮMoney и ЮKassa
+  - DOMAIN-SUFFIX,yoomoney.com # Банки и платёжка: ЮMoney и ЮKassa
+  - DOMAIN-SUFFIX,youdo.com # Объявления, недвижимость, работа, карты: SuperJob, Работа.ру, Профи.ру, Kwork
+  - DOMAIN-SUFFIX,youdrive.today # Такси, каршеринг, самокаты, транспорт: Каршеринг: Делимобиль, BelkaCar, Ситидрайв
+  - DOMAIN-SUFFIX,youla.io # Объявления, недвижимость, работа, карты: Юла
+  - DOMAIN-SUFFIX,yourgood.app # Прочее (добор из публичных списков): Добор из списков: разное из category-ru
+  - DOMAIN-SUFFIX,zen.media # Соцсети, почта, мессенджеры: Дзен
+  - DOMAIN-SUFFIX,zentotem.net # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
+  - DOMAIN-SUFFIX,zvooq.com # Кинотеатры, музыка, книги: Звук (Сбер)
+  - DOMAIN-SUFFIX,zvq.me # Кинотеатры, музыка, книги: Звук (Сбер)
+  - DOMAIN-SUFFIX,zvuk-b2b.com # Банки и платёжка: Сбербанк
