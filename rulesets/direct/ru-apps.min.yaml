@@ -13,6 +13,8 @@ payload:
   - PROCESS-NAME,com.drweb
   - PROCESS-NAME,com.drweb.pro
   - PROCESS-NAME,com.equeo.megafondraiv
+  - PROCESS-NAME,com.ertelecom.agent
+  - PROCESS-NAME,com.ertelecom.smarthome
   - PROCESS-NAME,com.evrasiar
   - PROCESS-NAME,com.gmeteos.infometeos
   - PROCESS-NAME,com.goodok.mts

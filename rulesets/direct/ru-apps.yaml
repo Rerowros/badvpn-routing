@@ -18,6 +18,8 @@ payload:
   - PROCESS-NAME,com.drweb # Антивирусы, ИБ, бизнес-софт: Dr.Web (проверено Google Play)
   - PROCESS-NAME,com.drweb.pro # Антивирусы, ИБ, бизнес-софт: Dr.Web (проверено Google Play)
   - PROCESS-NAME,com.equeo.megafondraiv # Магазины приложений: Прочие RU-приложения (из списков) (из списка)
+  - PROCESS-NAME,com.ertelecom.agent # Операторы связи и их ЛК: Мой Дом.ру (ЛК) (проверено Google Play)
+  - PROCESS-NAME,com.ertelecom.smarthome # Операторы связи и их ЛК: Умный Дом.ру (домофон) (проверено Google Play)
   - PROCESS-NAME,com.evrasiar # Магазины приложений: Прочие RU-приложения (из списков) (из списка)
   - PROCESS-NAME,com.gmeteos.infometeos # Магазины приложений: Прочие RU-приложения (из списков) (из списка)
   - PROCESS-NAME,com.goodok.mts # Операторы связи и их ЛК: МТС (из списка)
