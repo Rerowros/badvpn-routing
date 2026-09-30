@@ -97,6 +97,7 @@ payload:
   - DOMAIN-SUFFIX,de-rt.org # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
   - DOMAIN-SUFFIX,de-rtnews.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
   - DOMAIN-SUFFIX,de-rtnews.net # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
+  - DOMAIN-SUFFIX,delimobil.com # Такси и каршеринг: Делимобиль (сайт/публичные списки, 2026-09-30)
   - DOMAIN-SUFFIX,dert.online # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
   - DOMAIN-SUFFIX,dert.site # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
   - DOMAIN-SUFFIX,dert.tech # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
@@ -105,6 +106,7 @@ payload:
   - DOMAIN-SUFFIX,domclick.tech # Объявления, недвижимость, работа, карты: ДомКлик
   - DOMAIN-SUFFIX,donationalerts.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
   - DOMAIN-SUFFIX,driveawaytaxi.org # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,drivee.com # Такси и каршеринг: Drivee (сайт/публичные списки, 2026-09-30)
   - DOMAIN-SUFFIX,drweb-av.de # Антивирусы, ИБ, бизнес-софт: Dr.Web
   - DOMAIN-SUFFIX,drweb-av.it # Антивирусы, ИБ, бизнес-софт: Dr.Web
   - DOMAIN-SUFFIX,drweb-av.pl # Антивирусы, ИБ, бизнес-софт: Dr.Web
@@ -164,6 +166,7 @@ payload:
   - DOMAIN-SUFFIX,icq.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
   - DOMAIN-SUFFIX,icq.im # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
   - DOMAIN-SUFFIX,interfax.com # СМИ: Интерфакс (добор 27.09)
+  - DOMAIN-SUFFIX,intersvyaz.net # Домофоны: Интерсвязь (сайт/публичные списки, 2026-09-30)
   - DOMAIN-SUFFIX,ivi.tv # Кинотеатры, музыка, книги: ivi
   - DOMAIN-SUFFIX,ivicdn.tv # Кинотеатры, музыка, книги: Добор из списков: развлечения
   - DOMAIN-SUFFIX,ixbt.com # Кинотеатры, музыка, книги: Добор из списков: ixbt
@@ -198,6 +201,7 @@ payload:
   - DOMAIN-SUFFIX,lmru.tech # Маркетплейсы, ритейл, доставка: Детский мир, Спортмастер, Леман Про
   - DOMAIN-SUFFIX,lovina.app # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
   - DOMAIN-SUFFIX,lukoil.com # АЗС и топливо: Лукойл (добор 27.09)
+  - DOMAIN-SUFFIX,magnit.app # Доставка: Магнит (сайт/публичные списки, 2026-09-30)
   - DOMAIN-SUFFIX,magnit.com # Маркетплейсы, ритейл, доставка: Магнит
   - DOMAIN-SUFFIX,magnit.tech # Маркетплейсы, ритейл, доставка: Магнит
   - DOMAIN-SUFFIX,medsi.com # Госуслуги, ФНС, мос.ру, ЕМИАС: Добор из списков: медицина
@@ -297,6 +301,7 @@ payload:
   - DOMAIN-SUFFIX,rocketozon.by # Маркетплейсы, ритейл, доставка: Ozon
   - DOMAIN-SUFFIX,romanovs100.com # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
   - DOMAIN-SUFFIX,rosbank-credit.com # Банки и платёжка: Т-Банк (Тинькофф)
+  - DOMAIN-SUFFIX,rosdomofon.com # Домофоны: РосДомофон (сайт/публичные списки, 2026-09-30)
   - DOMAIN-SUFFIX,rosneft.com # АЗС и топливо: Роснефть (добор 27.09)
   - DOMAIN-SUFFIX,rossiyasegodnya.com # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
   - DOMAIN-SUFFIX,rostaxi.org # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
@@ -395,6 +400,8 @@ payload:
   - DOMAIN-SUFFIX,spasibo.digital # Банки и платёжка: Сбербанк
   - DOMAIN-SUFFIX,spasibo.market # Банки и платёжка: Сбербанк
   - DOMAIN-SUFFIX,sportmaster.tech # Маркетплейсы, ритейл, доставка: Детский мир, Спортмастер, Леман Про
+  - DOMAIN-SUFFIX,sputnik.direct # Домофоны: Спутник (сайт/публичные списки, 2026-09-30)
+  - DOMAIN-SUFFIX,sputnik.systems # Домофоны: Спутник (сайт/публичные списки, 2026-09-30)
   - DOMAIN-SUFFIX,sputnikglobe.com # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
   - DOMAIN-SUFFIX,sputnikimages.com # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
   - DOMAIN-SUFFIX,sputnikmediabank.com # Кинотеатры, музыка, книги: Добор из списков: rossiyasegodnya
@@ -432,11 +439,13 @@ payload:
   - DOMAIN-SUFFIX,tutu.tech # Авиа, РЖД, билеты, путешествия: Туту, Аэроэкспресс
   - DOMAIN-SUFFIX,tutu.travel # Авиа, РЖД, билеты, путешествия: Туту, Аэроэкспресс
   - DOMAIN-SUFFIX,tvoyodbo.online # Операторы связи и их ЛК: МТС
+  - DOMAIN-SUFFIX,ufanetgroup.com # Домофоны: Уфанет (сайт/публичные списки, 2026-09-30)
   - DOMAIN-SUFFIX,uma.media # Российские CDN: CDN VK/OK/Mail.ru
   - DOMAIN-SUFFIX,umschool.net # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
   - DOMAIN-SUFFIX,unidraw.io # Банки и платёжка: Т-Банк (Тинькофф)
   - DOMAIN-SUFFIX,unirest.tech # Маркетплейсы, ритейл, доставка: Добор из списков: ритейл
   - DOMAIN-SUFFIX,uralairlines.com # Авиа, РЖД, билеты, путешествия: Уральские, Россия, UTair, Nordwind, Азимут
+  - DOMAIN-SUFFIX,urent.city # Такси и каршеринг: Юрент (самокаты) (сайт/публичные списки, 2026-09-30)
   - DOMAIN-SUFFIX,userapi.com # Соцсети, почта, мессенджеры: ВКонтакте
   - DOMAIN-SUFFIX,utair.com # Авиа, РЖД, билеты, путешествия: ЮТэйр (добор 27.09)
   - DOMAIN-SUFFIX,vgtrk.com # Кинотеатры, музыка, книги: ВГТРК (добор 27.09)

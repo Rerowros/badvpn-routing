@@ -89,6 +89,7 @@ payload:
   - DOMAIN-SUFFIX,de-rt.org
   - DOMAIN-SUFFIX,de-rtnews.com
   - DOMAIN-SUFFIX,de-rtnews.net
+  - DOMAIN-SUFFIX,delimobil.com
   - DOMAIN-SUFFIX,dert.online
   - DOMAIN-SUFFIX,dert.site
   - DOMAIN-SUFFIX,dert.tech
@@ -97,6 +98,7 @@ payload:
   - DOMAIN-SUFFIX,domclick.tech
   - DOMAIN-SUFFIX,donationalerts.com
   - DOMAIN-SUFFIX,driveawaytaxi.org
+  - DOMAIN-SUFFIX,drivee.com
   - DOMAIN-SUFFIX,drweb-av.de
   - DOMAIN-SUFFIX,drweb-av.it
   - DOMAIN-SUFFIX,drweb-av.pl
@@ -156,6 +158,7 @@ payload:
   - DOMAIN-SUFFIX,icq.com
   - DOMAIN-SUFFIX,icq.im
   - DOMAIN-SUFFIX,interfax.com
+  - DOMAIN-SUFFIX,intersvyaz.net
   - DOMAIN-SUFFIX,ivi.tv
   - DOMAIN-SUFFIX,ivicdn.tv
   - DOMAIN-SUFFIX,ixbt.com
@@ -190,6 +193,7 @@ payload:
   - DOMAIN-SUFFIX,lmru.tech
   - DOMAIN-SUFFIX,lovina.app
   - DOMAIN-SUFFIX,lukoil.com
+  - DOMAIN-SUFFIX,magnit.app
   - DOMAIN-SUFFIX,magnit.com
   - DOMAIN-SUFFIX,magnit.tech
   - DOMAIN-SUFFIX,medsi.com
@@ -289,6 +293,7 @@ payload:
   - DOMAIN-SUFFIX,rocketozon.by
   - DOMAIN-SUFFIX,romanovs100.com
   - DOMAIN-SUFFIX,rosbank-credit.com
+  - DOMAIN-SUFFIX,rosdomofon.com
   - DOMAIN-SUFFIX,rosneft.com
   - DOMAIN-SUFFIX,rossiyasegodnya.com
   - DOMAIN-SUFFIX,rostaxi.org
@@ -387,6 +392,8 @@ payload:
   - DOMAIN-SUFFIX,spasibo.digital
   - DOMAIN-SUFFIX,spasibo.market
   - DOMAIN-SUFFIX,sportmaster.tech
+  - DOMAIN-SUFFIX,sputnik.direct
+  - DOMAIN-SUFFIX,sputnik.systems
   - DOMAIN-SUFFIX,sputnikglobe.com
   - DOMAIN-SUFFIX,sputnikimages.com
   - DOMAIN-SUFFIX,sputnikmediabank.com
@@ -424,11 +431,13 @@ payload:
   - DOMAIN-SUFFIX,tutu.tech
   - DOMAIN-SUFFIX,tutu.travel
   - DOMAIN-SUFFIX,tvoyodbo.online
+  - DOMAIN-SUFFIX,ufanetgroup.com
   - DOMAIN-SUFFIX,uma.media
   - DOMAIN-SUFFIX,umschool.net
   - DOMAIN-SUFFIX,unidraw.io
   - DOMAIN-SUFFIX,unirest.tech
   - DOMAIN-SUFFIX,uralairlines.com
+  - DOMAIN-SUFFIX,urent.city
   - DOMAIN-SUFFIX,userapi.com
   - DOMAIN-SUFFIX,utair.com
   - DOMAIN-SUFFIX,vgtrk.com

@@ -7,9 +7,12 @@ payload:
   - PROCESS-NAME,com.birzha_rt
   - PROCESS-NAME,com.bitrix24.android
   - PROCESS-NAME,com.bogg.art.vkt
+  - PROCESS-NAME,com.carshering
   - PROCESS-NAME,com.ctcmediagroup.videomore
   - PROCESS-NAME,com.dartit.mobileagent
   - PROCESS-NAME,com.dartit.RTcabinet
+  - PROCESS-NAME,com.deliveryclub
+  - PROCESS-NAME,com.drivee.taxi.rides
   - PROCESS-NAME,com.drweb
   - PROCESS-NAME,com.drweb.pro
   - PROCESS-NAME,com.equeo.megafondraiv
@@ -23,6 +26,7 @@ payload:
   - PROCESS-NAME,com.indygomobi.detifm
   - PROCESS-NAME,com.indygomobi.relaxfm
   - PROCESS-NAME,com.indygomobi.zenit
+  - PROCESS-NAME,com.intersvyaz.lk
   - PROCESS-NAME,com.iwedia.ui.beeline.atv
   - PROCESS-NAME,com.kaspersky.passwordmanager
   - PROCESS-NAME,com.kaspersky.safekids
@@ -50,10 +54,14 @@ payload:
   - PROCESS-NAME,com.pobeda.anniversary
   - PROCESS-NAME,com.pogoda.infometeos
   - PROCESS-NAME,com.programmisty.emiasapp
+  - PROCESS-NAME,com.punicapp.whoosh
+  - PROCESS-NAME,com.rosdomofon.rdua
   - PROCESS-NAME,com.rostelecom.printservice
   - PROCESS-NAME,com.rzd.eventsrzd
+  - PROCESS-NAME,com.samolet.android
   - PROCESS-NAME,com.sdkit.search.app
   - PROCESS-NAME,com.spbtv.rosing
+  - PROCESS-NAME,com.system.yard
   - PROCESS-NAME,com.tinkoff.investing
   - PROCESS-NAME,com.uma.musicvk
   - PROCESS-NAME,com.vkusvill.courier
@@ -69,9 +77,11 @@ payload:
   - PROCESS-NAME,megafon.transport.mobile
   - PROCESS-NAME,org.rtk.cleaning
   - PROCESS-NAME,ruagro.start.tech
+  - PROCESS-NAME,sputnik.axmor.com
   - PROCESS-NAME,tech.clink.emias.emiasqrcode
   - PROCESS-NAME,travel.ozon.mobile
   - PROCESS-NAME,tv.ntvplus.app
   - PROCESS-NAME,tv.ntvplus.app.tv
   - PROCESS-NAME,wb.partners
   - PROCESS-NAME,wildberries.business
+  - PROCESS-NAME,youdrive.today
