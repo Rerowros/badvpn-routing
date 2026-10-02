@@ -62,6 +62,13 @@ sources:
     behavior: classical
     route: DIRECT
     path: rulesets/direct/ru-asn.min.yaml
+  badvpn_ru_auto:
+    provider: BadVPN-RU-Auto
+    owner: local/badvpn-routing
+    format: yaml
+    behavior: classical
+    route: DIRECT
+    path: rulesets/direct/ru-auto.min.yaml
   badvpn_ru_keywords:
     provider: BadVPN-RU-Keywords
     owner: local/badvpn-routing

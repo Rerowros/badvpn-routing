@@ -1,0 +1,40 @@
+name: RU auto ruleset
+
+# Ежедневная пересборка rulesets/direct/ru-auto.yaml из geosite.dat runetfreedom
+# (релиз выходит около 10:00 UTC). Если не прошли проверки build_ru_auto.py
+# (размер, MUST_EXCLUDE, MUST_COVER) — задача падает и файл не меняется.
+on:
+  schedule:
+    - cron: "40 11 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ru-auto
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Build ru-auto
+        run: uv run scripts/build_ru_auto.py
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- rulesets/direct/ru-auto.yaml rulesets/direct/ru-auto.min.yaml; then
+            echo "без изменений"; exit 0
+          fi
+          # строка с датой сборки меняется каждый день; коммит только если поменялся сам список
+          if git diff -U0 -- rulesets/direct/ru-auto.min.yaml | grep -qE '^[-+]  - '; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add rulesets/direct/ru-auto.yaml rulesets/direct/ru-auto.min.yaml
+            git commit -m "ru-auto: автосборка $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "изменилась только дата сборки"; git checkout -- rulesets/direct
+          fi
