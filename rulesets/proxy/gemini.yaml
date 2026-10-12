@@ -13,3 +13,10 @@ payload:
   - DOMAIN,waa-pa.clients6.google.com
   - DOMAIN,ogads-pa.clients6.google.com
   - DOMAIN,alkalimakersuite-pa.clients6.google.com
+  # Приложение Gemini на Android ходит в свои API, а не в gemini.google.com (журнал Clash 11.10.2026)
+  - DOMAIN-SUFFIX,gemini.google
+  - DOMAIN,robinfrontend-pa.googleapis.com
+  - DOMAIN,assistant-s3-pa.googleapis.com
+  - DOMAIN,geller-pa.googleapis.com
+  - DOMAIN,subscriptionsfirstparty-pa.googleapis.com
+  - DOMAIN,signaler-pa.googleapis.com
