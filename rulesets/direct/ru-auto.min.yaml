@@ -1,5 +1,6 @@
 payload:
   - DOMAIN-SUFFIX,accesspoint.uz
+  - DOMAIN-SUFFIX,amt-insurance.com
   - DOMAIN-SUFFIX,antiphishing.nl
   - DOMAIN-SUFFIX,asiangooglenetwork.com
   - DOMAIN-SUFFIX,aviasales.com
@@ -7,9 +8,16 @@ payload:
   - DOMAIN-SUFFIX,bank131.com
   - DOMAIN-SUFFIX,beeline.tv
   - DOMAIN-SUFFIX,bitrix.info
+  - DOMAIN-SUFFIX,bitrix24.com
+  - DOMAIN-SUFFIX,bitrix24.net
+  - DOMAIN-SUFFIX,bitrix24.tech
+  - DOMAIN-SUFFIX,bitrix24public.com
+  - DOMAIN-SUFFIX,bitrixphone.com
+  - DOMAIN-SUFFIX,bitrixsoft.com
   - DOMAIN-SUFFIX,bizmrg.com
   - DOMAIN-SUFFIX,cdnvideohub.com
   - DOMAIN-SUFFIX,cert-gib.com
+  - DOMAIN-SUFFIX,chat2desk.com
   - DOMAIN-SUFFIX,cloudru.cn
   - DOMAIN-SUFFIX,codeseason.by
   - DOMAIN-SUFFIX,comss.club
@@ -31,11 +39,15 @@ payload:
   - DOMAIN-SUFFIX,drweb.com
   - DOMAIN-SUFFIX,drweb.fr
   - DOMAIN-SUFFIX,drweb.kz
+  - DOMAIN-SUFFIX,ds-servers.com
+  - DOMAIN-SUFFIX,dsn.host
+  - DOMAIN-SUFFIX,dsncdn.net
   - DOMAIN-SUFFIX,durovscode.com
   - DOMAIN-SUFFIX,eadaily.org
   - DOMAIN-SUFFIX,eligens.cl
   - DOMAIN-SUFFIX,eligens.com.br
   - DOMAIN-SUFFIX,eligens.io
+  - DOMAIN-SUFFIX,energotransbank.com
   - DOMAIN-SUFFIX,etna.ai
   - DOMAIN-SUFFIX,ewisdom.us.kg
   - DOMAIN-SUFFIX,facct.email
@@ -70,6 +82,7 @@ payload:
   - DOMAIN-SUFFIX,groupib.us
   - DOMAIN-SUFFIX,gw2ru.com
   - DOMAIN-SUFFIX,hayya.ae
+  - DOMAIN-SUFFIX,hellodoc.app
   - DOMAIN-SUFFIX,hh.kz
   - DOMAIN-SUFFIX,icq-download.com
   - DOMAIN-SUFFIX,icq-mobile.com
@@ -111,6 +124,7 @@ payload:
   - DOMAIN-SUFFIX,icqvideo.com
   - DOMAIN-SUFFIX,ideco.dev
   - DOMAIN-SUFFIX,it-territory.com
+  - DOMAIN-SUFFIX,joyreactor.cc
   - DOMAIN-SUFFIX,kaspersky-labs.com
   - DOMAIN-SUFFIX,kaspersky.be
   - DOMAIN-SUFFIX,kaspersky.ca
@@ -150,10 +164,16 @@ payload:
   - DOMAIN-SUFFIX,kinorium.com
   - DOMAIN-SUFFIX,knightspeak.com
   - DOMAIN-SUFFIX,kontur.host
-  - DOMAIN-SUFFIX,korona.com
+  - DOMAIN-SUFFIX,koronapay.com
+  - DOMAIN-SUFFIX,kp-config-smart-tv.akamaized.net
+  - DOMAIN-SUFFIX,kp-configs-smart-tv.s3.eu-central-1.amazonaws.com
+  - DOMAIN-SUFFIX,ktalk.host
+  - DOMAIN-SUFFIX,lexgarant.com
   - DOMAIN-SUFFIX,mailicq.org
+  - DOMAIN-SUFFIX,maritimebank.com
   - DOMAIN-SUFFIX,mcc250.pub.3gppnetwork.org
   - DOMAIN-SUFFIX,mcs.st
+  - DOMAIN-SUFFIX,medrocket.me
   - DOMAIN-SUFFIX,medsi.pro
   - DOMAIN-SUFFIX,meteofor.com
   - DOMAIN-SUFFIX,meteofor.st
@@ -175,11 +195,16 @@ payload:
   - DOMAIN-SUFFIX,ozon.li
   - DOMAIN-SUFFIX,pixonic.com
   - DOMAIN-SUFFIX,polza.ai
+  - DOMAIN-SUFFIX,pravmir.com
   - DOMAIN-SUFFIX,premiumlive.site
+  - DOMAIN-SUFFIX,priovtb.com
   - DOMAIN-SUFFIX,prod-my.games
+  - DOMAIN-SUFFIX,pskb.com
   - DOMAIN-SUFFIX,randomgodbot.com
   - DOMAIN-SUFFIX,rbsgate.com
+  - DOMAIN-SUFFIX,renins.com
   - DOMAIN-SUFFIX,restream-media.net
+  - DOMAIN-SUFFIX,robohall.tech
   - DOMAIN-SUFFIX,robotext.io
   - DOMAIN-SUFFIX,rtde.express
   - DOMAIN-SUFFIX,rteam.dev
@@ -195,6 +220,7 @@ payload:
   - DOMAIN-SUFFIX,sbercloud.tech
   - DOMAIN-SUFFIX,seclab.lat
   - DOMAIN-SUFFIX,sfunpay.com
+  - DOMAIN-SUFFIX,shedevrum.com
   - DOMAIN-SUFFIX,showip.net
   - DOMAIN-SUFFIX,sourcecraft.dev
   - DOMAIN-SUFFIX,support-uber.com
@@ -230,10 +256,16 @@ payload:
   - DOMAIN-SUFFIX,xn--c1avg
   - DOMAIN-SUFFIX,xn--e1adjldbbpv.xn--90ais
   - DOMAIN-SUFFIX,xn--p1acf
+  - DOMAIN-SUFFIX,yandex-ad.cn
+  - DOMAIN-SUFFIX,yandex-team.com
   - DOMAIN-SUFFIX,yandex.com.ua
+  - DOMAIN-SUFFIX,yandex.pro
+  - DOMAIN-SUFFIX,yandex.taxi
+  - DOMAIN-SUFFIX,yandex.travel
   - DOMAIN-SUFFIX,yandex.ua
   - DOMAIN-SUFFIX,yandexcloud.net
   - DOMAIN-SUFFIX,yandexcom.net
+  - DOMAIN-SUFFIX,yandexdataschool.com
   - DOMAIN-SUFFIX,yandexgo.com
   - DOMAIN-SUFFIX,yandexwebcache.org
   - DOMAIN-SUFFIX,yango-tech.com
@@ -247,4 +279,5 @@ payload:
   - DOMAIN-SUFFIX,yango.taxi
   - DOMAIN-SUFFIX,yangofellowship.com
   - DOMAIN-SUFFIX,yaplakal.com
+  - DOMAIN-SUFFIX,ydb.tech
   - DOMAIN-SUFFIX,zvuk.com

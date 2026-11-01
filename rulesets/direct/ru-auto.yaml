@@ -2,20 +2,28 @@
 # Источник: geosite.dat runetfreedom (CATEGORY-RU из v2fly + RU-AVAILABLE-ONLY-INSIDE).
 # Вычтено: российские зоны, ru-services/ru-keywords-replacement/ru-core, заблокированное в РФ,
 # хостинги/облака/конструкторы/виджеты, всё из rulesets/proxy и ru-auto-exclude.txt, @ads.
-# Собрано scripts/build_ru_auto.py 2026-10-02 18:47 UTC: 249 доменов. Не править руками —
+# Собрано scripts/build_ru_auto.py 2026-11-01 17:13 UTC: 282 доменов. Не править руками —
 # исключения в ru-auto-exclude.txt, добавления в ru-services.yaml.
 payload:
   - DOMAIN-SUFFIX,accesspoint.uz # category-ru
+  - DOMAIN-SUFFIX,amt-insurance.com # category-ru
   - DOMAIN-SUFFIX,antiphishing.nl # category-ru
   - DOMAIN-SUFFIX,asiangooglenetwork.com # category-ru
   - DOMAIN-SUFFIX,aviasales.com # category-ru
   - DOMAIN-SUFFIX,avs.io # category-ru
   - DOMAIN-SUFFIX,bank131.com # category-ru
   - DOMAIN-SUFFIX,beeline.tv # category-ru
-  - DOMAIN-SUFFIX,bitrix.info # только из РФ
+  - DOMAIN-SUFFIX,bitrix.info # category-ru
+  - DOMAIN-SUFFIX,bitrix24.com # category-ru
+  - DOMAIN-SUFFIX,bitrix24.net # category-ru
+  - DOMAIN-SUFFIX,bitrix24.tech # category-ru
+  - DOMAIN-SUFFIX,bitrix24public.com # category-ru
+  - DOMAIN-SUFFIX,bitrixphone.com # category-ru
+  - DOMAIN-SUFFIX,bitrixsoft.com # category-ru
   - DOMAIN-SUFFIX,bizmrg.com # category-ru
   - DOMAIN-SUFFIX,cdnvideohub.com # category-ru
   - DOMAIN-SUFFIX,cert-gib.com # category-ru
+  - DOMAIN-SUFFIX,chat2desk.com # category-ru
   - DOMAIN-SUFFIX,cloudru.cn # category-ru
   - DOMAIN-SUFFIX,codeseason.by # category-ru
   - DOMAIN-SUFFIX,comss.club # category-ru
@@ -37,11 +45,15 @@ payload:
   - DOMAIN-SUFFIX,drweb.com # category-ru
   - DOMAIN-SUFFIX,drweb.fr # category-ru
   - DOMAIN-SUFFIX,drweb.kz # category-ru
+  - DOMAIN-SUFFIX,ds-servers.com # category-ru
+  - DOMAIN-SUFFIX,dsn.host # category-ru
+  - DOMAIN-SUFFIX,dsncdn.net # category-ru
   - DOMAIN-SUFFIX,durovscode.com # category-ru
   - DOMAIN-SUFFIX,eadaily.org # category-ru
   - DOMAIN-SUFFIX,eligens.cl # category-ru
   - DOMAIN-SUFFIX,eligens.com.br # category-ru
   - DOMAIN-SUFFIX,eligens.io # category-ru
+  - DOMAIN-SUFFIX,energotransbank.com # category-ru
   - DOMAIN-SUFFIX,etna.ai # category-ru
   - DOMAIN-SUFFIX,ewisdom.us.kg # category-ru
   - DOMAIN-SUFFIX,facct.email # category-ru
@@ -76,6 +88,7 @@ payload:
   - DOMAIN-SUFFIX,groupib.us # category-ru
   - DOMAIN-SUFFIX,gw2ru.com # category-ru
   - DOMAIN-SUFFIX,hayya.ae # category-ru
+  - DOMAIN-SUFFIX,hellodoc.app # category-ru
   - DOMAIN-SUFFIX,hh.kz # category-ru
   - DOMAIN-SUFFIX,icq-download.com # category-ru
   - DOMAIN-SUFFIX,icq-mobile.com # category-ru
@@ -117,6 +130,7 @@ payload:
   - DOMAIN-SUFFIX,icqvideo.com # category-ru
   - DOMAIN-SUFFIX,ideco.dev # category-ru
   - DOMAIN-SUFFIX,it-territory.com # category-ru
+  - DOMAIN-SUFFIX,joyreactor.cc # category-ru
   - DOMAIN-SUFFIX,kaspersky-labs.com # category-ru
   - DOMAIN-SUFFIX,kaspersky.be # category-ru
   - DOMAIN-SUFFIX,kaspersky.ca # category-ru
@@ -156,10 +170,16 @@ payload:
   - DOMAIN-SUFFIX,kinorium.com # category-ru
   - DOMAIN-SUFFIX,knightspeak.com # category-ru
   - DOMAIN-SUFFIX,kontur.host # category-ru
-  - DOMAIN-SUFFIX,korona.com # category-ru
+  - DOMAIN-SUFFIX,koronapay.com # category-ru
+  - DOMAIN-SUFFIX,kp-config-smart-tv.akamaized.net # category-ru
+  - DOMAIN-SUFFIX,kp-configs-smart-tv.s3.eu-central-1.amazonaws.com # category-ru
+  - DOMAIN-SUFFIX,ktalk.host # category-ru
+  - DOMAIN-SUFFIX,lexgarant.com # category-ru
   - DOMAIN-SUFFIX,mailicq.org # category-ru
+  - DOMAIN-SUFFIX,maritimebank.com # category-ru
   - DOMAIN-SUFFIX,mcc250.pub.3gppnetwork.org # category-ru
   - DOMAIN-SUFFIX,mcs.st # category-ru
+  - DOMAIN-SUFFIX,medrocket.me # category-ru
   - DOMAIN-SUFFIX,medsi.pro # category-ru
   - DOMAIN-SUFFIX,meteofor.com # category-ru
   - DOMAIN-SUFFIX,meteofor.st # category-ru
@@ -181,11 +201,16 @@ payload:
   - DOMAIN-SUFFIX,ozon.li # category-ru
   - DOMAIN-SUFFIX,pixonic.com # category-ru
   - DOMAIN-SUFFIX,polza.ai # category-ru
+  - DOMAIN-SUFFIX,pravmir.com # category-ru
   - DOMAIN-SUFFIX,premiumlive.site # category-ru
+  - DOMAIN-SUFFIX,priovtb.com # category-ru
   - DOMAIN-SUFFIX,prod-my.games # category-ru
+  - DOMAIN-SUFFIX,pskb.com # category-ru
   - DOMAIN-SUFFIX,randomgodbot.com # category-ru
   - DOMAIN-SUFFIX,rbsgate.com # category-ru
+  - DOMAIN-SUFFIX,renins.com # category-ru
   - DOMAIN-SUFFIX,restream-media.net # category-ru
+  - DOMAIN-SUFFIX,robohall.tech # category-ru
   - DOMAIN-SUFFIX,robotext.io # category-ru
   - DOMAIN-SUFFIX,rtde.express # category-ru
   - DOMAIN-SUFFIX,rteam.dev # category-ru
@@ -201,6 +226,7 @@ payload:
   - DOMAIN-SUFFIX,sbercloud.tech # category-ru
   - DOMAIN-SUFFIX,seclab.lat # category-ru
   - DOMAIN-SUFFIX,sfunpay.com # category-ru
+  - DOMAIN-SUFFIX,shedevrum.com # category-ru
   - DOMAIN-SUFFIX,showip.net # только из РФ
   - DOMAIN-SUFFIX,sourcecraft.dev # category-ru
   - DOMAIN-SUFFIX,support-uber.com # category-ru
@@ -236,10 +262,16 @@ payload:
   - DOMAIN-SUFFIX,xn--c1avg # category-ru
   - DOMAIN-SUFFIX,xn--e1adjldbbpv.xn--90ais # category-ru
   - DOMAIN-SUFFIX,xn--p1acf # category-ru
+  - DOMAIN-SUFFIX,yandex-ad.cn # category-ru
+  - DOMAIN-SUFFIX,yandex-team.com # category-ru
   - DOMAIN-SUFFIX,yandex.com.ua # category-ru
+  - DOMAIN-SUFFIX,yandex.pro # category-ru
+  - DOMAIN-SUFFIX,yandex.taxi # category-ru
+  - DOMAIN-SUFFIX,yandex.travel # category-ru
   - DOMAIN-SUFFIX,yandex.ua # category-ru
   - DOMAIN-SUFFIX,yandexcloud.net # category-ru
   - DOMAIN-SUFFIX,yandexcom.net # category-ru
+  - DOMAIN-SUFFIX,yandexdataschool.com # category-ru
   - DOMAIN-SUFFIX,yandexgo.com # category-ru
   - DOMAIN-SUFFIX,yandexwebcache.org # category-ru
   - DOMAIN-SUFFIX,yango-tech.com # category-ru
@@ -253,4 +285,5 @@ payload:
   - DOMAIN-SUFFIX,yango.taxi # category-ru
   - DOMAIN-SUFFIX,yangofellowship.com # category-ru
   - DOMAIN-SUFFIX,yaplakal.com # category-ru
+  - DOMAIN-SUFFIX,ydb.tech # category-ru
   - DOMAIN-SUFFIX,zvuk.com # category-ru
