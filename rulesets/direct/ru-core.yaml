@@ -92,7 +92,6 @@ payload:
   - DOMAIN-SUFFIX,yastat.net
   - DOMAIN-SUFFIX,ya.cc
   - DOMAIN-SUFFIX,ya.ru
-  - GEOSITE,vk
   - DOMAIN-SUFFIX,vk.com
   - DOMAIN-SUFFIX,vk.me
   - DOMAIN-SUFFIX,vkmessenger.com
