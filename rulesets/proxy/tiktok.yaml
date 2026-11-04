@@ -3,7 +3,13 @@ payload:
   - PROCESS-NAME,TikTok
   - PROCESS-NAME,com.zhiliaoapp.musically
   - PROCESS-NAME,com.ss.android.ugc.trill
-  - GEOSITE,tiktok
+  - DOMAIN-SUFFIX,tik-tokapi.com
+  - DOMAIN-SUFFIX,ttcdn-us.com
+  - DOMAIN-SUFFIX,ttoverseaus.net
+  - DOMAIN,roovza-launches.appsflyersdk.com
+  - DOMAIN,roovza.inapps.appsflyersdk.com
+  - DOMAIN,roovza.launches.appsflyersdk.com
+  - DOMAIN,roovza.skadsdk.appsflyersdk.com
   - DOMAIN-KEYWORD,tiktok
   - DOMAIN-SUFFIX,tiktok.com
   - DOMAIN-SUFFIX,tiktokv.com
