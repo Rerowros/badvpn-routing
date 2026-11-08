@@ -2,7 +2,7 @@
 # Источник: geosite.dat runetfreedom (CATEGORY-RU из v2fly + RU-AVAILABLE-ONLY-INSIDE).
 # Вычтено: российские зоны, ru-services/ru-keywords-replacement/ru-core, заблокированное в РФ,
 # хостинги/облака/конструкторы/виджеты, всё из rulesets/proxy и ru-auto-exclude.txt, @ads.
-# Собрано scripts/build_ru_auto.py 2026-11-03 18:38 UTC: 283 доменов. Не править руками —
+# Собрано scripts/build_ru_auto.py 2026-11-08 17:13 UTC: 284 доменов. Не править руками —
 # исключения в ru-auto-exclude.txt, добавления в ru-services.yaml.
 payload:
   - DOMAIN-SUFFIX,accesspoint.uz # category-ru
@@ -197,6 +197,7 @@ payload:
   - DOMAIN-SUFFIX,ngenix.net # category-ru
   - DOMAIN-SUFFIX,odnoklasniki.ua # category-ru
   - DOMAIN-SUFFIX,oskelly.co # category-ru
+  - DOMAIN-SUFFIX,otzovik.com # category-ru
   - DOMAIN-SUFFIX,ozon.app # category-ru
   - DOMAIN-SUFFIX,ozon.li # category-ru
   - DOMAIN-SUFFIX,pixonic.com # category-ru
