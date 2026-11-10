@@ -2,7 +2,7 @@
 # Источник: geosite.dat runetfreedom (CATEGORY-RU из v2fly + RU-AVAILABLE-ONLY-INSIDE).
 # Вычтено: российские зоны, ru-services/ru-keywords-replacement/ru-core, заблокированное в РФ,
 # хостинги/облака/конструкторы/виджеты, всё из rulesets/proxy и ru-auto-exclude.txt, @ads.
-# Собрано scripts/build_ru_auto.py 2026-11-08 17:13 UTC: 284 доменов. Не править руками —
+# Собрано scripts/build_ru_auto.py 2026-11-10 18:48 UTC: 285 доменов. Не править руками —
 # исключения в ru-auto-exclude.txt, добавления в ru-services.yaml.
 payload:
   - DOMAIN-SUFFIX,accesspoint.uz # category-ru
@@ -181,6 +181,7 @@ payload:
   - DOMAIN-SUFFIX,mcs.st # category-ru
   - DOMAIN-SUFFIX,medrocket.me # category-ru
   - DOMAIN-SUFFIX,medsi.pro # category-ru
+  - DOMAIN-SUFFIX,megabitus.com # category-ru
   - DOMAIN-SUFFIX,meteofor.com # category-ru
   - DOMAIN-SUFFIX,meteofor.st # category-ru
   - DOMAIN-SUFFIX,mirabilis.com # category-ru
