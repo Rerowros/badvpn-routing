@@ -191,6 +191,7 @@ payload:
   - DOMAIN-SUFFIX,ktech.team # Кинотеатры, музыка, книги: Добор из списков: RT / Россия сегодня
   - DOMAIN-SUFFIX,kudago.com # Авиа, РЖД, билеты, путешествия: Билеты: Кассир, Яндекс Афиша, МТС Live, Ticketland
   - DOMAIN-SUFFIX,lamoda.by # Маркетплейсы, ритейл, доставка: Lamoda
+  - DOMAIN-SUFFIX,lamoda.com # Маркетплейсы, ритейл, доставка: Lamoda (из DOMAIN-DIRECT-SUFFIX)
   - DOMAIN-SUFFIX,lamoda.kz # Маркетплейсы, ритейл, доставка: Lamoda
   - DOMAIN-SUFFIX,lenta.com # Маркетплейсы, ритейл, доставка: Лента
   - DOMAIN-SUFFIX,lenta.tech # Маркетплейсы, ритейл, доставка: Лента
@@ -456,6 +457,7 @@ payload:
   - DOMAIN-SUFFIX,vk-cdn.net # Соцсети, почта, мессенджеры: ВКонтакте
   - DOMAIN-SUFFIX,vk-portal.net # Российские CDN: CDN VK/OK/Mail.ru
   - DOMAIN-SUFFIX,vk.cc # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
+  - DOMAIN-SUFFIX,vk.cloud # Облака: VK Cloud (из DOMAIN-DIRECT-SUFFIX)
   - DOMAIN-SUFFIX,vk.com # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
   - DOMAIN-SUFFIX,vk.company # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
   - DOMAIN-SUFFIX,vk.design # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
@@ -485,6 +487,7 @@ payload:
   - DOMAIN-SUFFIX,vkuservideo.com # Соцсети, почта, мессенджеры: ВКонтакте
   - DOMAIN-SUFFIX,vkuservideo.net # Соцсети, почта, мессенджеры: ВКонтакте
   - DOMAIN-SUFFIX,vkusvill.tech # Маркетплейсы, ритейл, доставка: ВкусВилл
+  - DOMAIN-SUFFIX,vkvideo.com # Соцсети, почта, мессенджеры: ВКонтакте (из DOMAIN-DIRECT-SUFFIX)
   - DOMAIN-SUFFIX,vkworkspace.kz # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
   - DOMAIN-SUFFIX,vmailru.net # Соцсети, почта, мессенджеры: Mail.ru и VK WorkSpace
   - DOMAIN-SUFFIX,vtb-russia.com # Прочее (добор из публичных списков): Добор из списков: прочее (разные RU-сервисы)
@@ -501,6 +504,7 @@ payload:
   - DOMAIN-SUFFIX,wb.kg # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wb.kz # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wbautomation.tech # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wbbasket.com # Маркетплейсы, ритейл, доставка: Wildberries (RWB) (из DOMAIN-DIRECT-SUFFIX)
   - DOMAIN-SUFFIX,wbcontent.net # Российские CDN: CDN маркетплейсов
   - DOMAIN-SUFFIX,wbr.by # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wbstatic.net # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
@@ -509,12 +513,14 @@ payload:
   - DOMAIN-SUFFIX,wildberries.am # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wildberries.by # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wildberries.co.il # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.com # Маркетплейсы, ритейл, доставка: Wildberries (RWB) (из DOMAIN-DIRECT-SUFFIX)
   - DOMAIN-SUFFIX,wildberries.es # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wildberries.eu # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wildberries.ge # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wildberries.kg # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wildberries.kz # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wildberries.lt # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
+  - DOMAIN-SUFFIX,wildberries.net # Маркетплейсы, ритейл, доставка: Wildberries (RWB) (из DOMAIN-DIRECT-SUFFIX)
   - DOMAIN-SUFFIX,wildberries.tj # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wildberries.tm # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
   - DOMAIN-SUFFIX,wildberries.uz # Маркетплейсы, ритейл, доставка: Wildberries (RWB)
@@ -545,7 +551,7 @@ payload:
   - DOMAIN-SUFFIX,yandex.asia # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
   - DOMAIN-SUFFIX,yandex.az # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
   - DOMAIN-SUFFIX,yandex.by # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
-  - DOMAIN,yandex.cloud # Облака: только консоль/сайт: Yandex Cloud: сайт
+  - DOMAIN-SUFFIX,yandex.cloud # Облака: Yandex Cloud (из DOMAIN-DIRECT-SUFFIX)
   - DOMAIN-SUFFIX,yandex.co.il # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
   - DOMAIN-SUFFIX,yandex.com # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
   - DOMAIN-SUFFIX,yandex.com.am # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
@@ -574,6 +580,7 @@ payload:
   - DOMAIN-SUFFIX,yandex.tm # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
   - DOMAIN-SUFFIX,yandex.tr # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
   - DOMAIN-SUFFIX,yandex.uz # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
+  - DOMAIN-SUFFIX,yandexusercontent.com # Яндекс-экосистема: Яндекс (из DOMAIN-DIRECT-SUFFIX)
   - DOMAIN-SUFFIX,yandexwebcache.net # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
   - DOMAIN-SUFFIX,yango-b2b.com # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)
   - DOMAIN-SUFFIX,yango-team.com # Яндекс-экосистема: Яндекс (поиск, почта, диск, 360)

@@ -1,0 +1,76 @@
+# BadVPN: процессы лаунчеров и игр без дублей по регистру -> Игры.
+# Домены и IP вынесены в games-core-domains.mrs и games-core-ip.mrs.
+payload:
+  - PROCESS-NAME,ForzaHorizon6.exe
+  - PROCESS-NAME,ForzaHorizon5.exe
+  - PROCESS-NAME,ForzaHorizon4.exe
+  - PROCESS-NAME,ForzaHorizon3.exe
+  - PROCESS-NAME,ForzaMotorsport.exe
+  - PROCESS-NAME,forza_gaming.desktop.x64_release_final.exe
+  - PROCESS-NAME,bf6.exe
+  - PROCESS-NAME,bf2042.exe
+  - PROCESS-NAME,bfv.exe
+  - PROCESS-NAME,bf1.exe
+  - PROCESS-NAME,bf4.exe
+  - PROCESS-NAME,EAAntiCheat.GameService.exe
+  - PROCESS-NAME,EAAntiCheat.GameServiceLauncher.exe
+  - PROCESS-NAME,EAAntiCheat.Installer.exe
+  - PROCESS-NAME,EABackgroundService.exe
+  - PROCESS-NAME,EALauncher.exe
+  - PROCESS-NAME,EAConnect_microsoft.exe
+  - PROCESS-NAME,cod.exe
+  - PROCESS-NAME,ModernWarfare.exe
+  - PROCESS-NAME,ModernWarfareLauncher.exe
+  - PROCESS-NAME,BlackOpsColdWar.exe
+  - PROCESS-NAME,RiotClientUx.exe
+  - PROCESS-NAME,RiotClientUxRender.exe
+  - PROCESS-NAME,vgtray.exe
+  - PROCESS-NAME,LeagueClientUx.exe
+  - PROCESS-NAME,LeagueClientUxRender.exe
+  - PROCESS-NAME,EasyAntiCheat_EOS_Setup.exe
+  - PROCESS-NAME,EACLauncher.exe
+  - PROCESS-NAME,BEService.exe
+  - PROCESS-NAME,BEService_x64.exe
+  - PROCESS-NAME,BattlEye.exe
+  - PROCESS-NAME,BELauncher.exe
+  - PROCESS-NAME,FACEIT.exe
+  - PROCESS-NAME,FACEITService.exe
+  - PROCESS-NAME,WorldOfTanks_RU.exe
+  - PROCESS-NAME,WorldOfWarships.exe
+  - PROCESS-NAME,wotblitz.exe
+  - PROCESS-NAME,lgc.exe
+  - PROCESS-NAME,lgc_api.exe
+  - PROCESS-NAME,LestaErrorMonitor.exe
+  - PROCESS-NAME,WargamingGameUpdater.exe
+  - PROCESS-NAME,WargamingErrorMonitor.exe
+  - PROCESS-NAME,aces.exe
+  - PROCESS-NAME,Gaijin.Net Updater.exe
+  - PROCESS-NAME,EFT.exe
+  - PROCESS-NAME,PioneerGame.exe
+  - PROCESS-NAME,FortniteLauncher.exe
+  - PROCESS-NAME,EpicWebHelper.exe
+  - PROCESS-NAME,RainbowSix_Vulkan.exe
+  - PROCESS-NAME,UplayWebCore.exe
+  - PROCESS-NAME,Overwatch Launcher.exe
+  - PROCESS-NAME,destiny2.exe
+  - PROCESS-NAME,DayZ_x64.exe
+  - PROCESS-NAME,DayZ_BE.exe
+  - PROCESS-NAME,PlayGTAV.exe
+  - PROCESS-NAME,RockstarService.exe
+  - PROCESS-NAME,Rockstar Games Launcher.exe
+  - PROCESS-NAME,RobloxPlayerBeta.exe
+  - PROCESS-NAME,Warframe.x64.exe
+  - PROCESS-NAME,PathOfExile.exe
+  - PROCESS-NAME,PathOfExile_x64.exe
+  - PROCESS-NAME,PathOfExileSteam.exe
+  - PROCESS-NAME,YuanShen.exe
+  - PROCESS-NAME,Steam.exe
+  - PROCESS-NAME,steam
+  - PROCESS-NAME,SteamWebHelper.exe
+  - PROCESS-NAME,steamwebhelper
+  - PROCESS-NAME,SteamService.exe
+  - PROCESS-NAME,steamservice
+  - PROCESS-NAME,steamerrorreporter.exe
+  - PROCESS-NAME,GameOverlayUI.exe
+  - PROCESS-NAME,com.valvesoftware.android.steam.community
+  - PROCESS-NAME,com.valvesoftware.steamlink

@@ -1,0 +1,41 @@
+# BadVPN: только DOMAIN-KEYWORD для российских сервисов -> DIRECT.
+# Дубли доменов из ru-keywords-replacement убраны (покрыты ru-services.mrs);
+# добавлены otkritie и bspb из ru-core.yaml.
+payload:
+  - DOMAIN-KEYWORD,gosuslugi
+  - DOMAIN-KEYWORD,mosreg
+  - DOMAIN-KEYWORD,mosgortrans
+  - DOMAIN-KEYWORD,vkplay
+  - DOMAIN-KEYWORD,sberbank
+  - DOMAIN-KEYWORD,sberpay
+  - DOMAIN-KEYWORD,tinkoff
+  - DOMAIN-KEYWORD,gazprombank
+  - DOMAIN-KEYWORD,psbank
+  - DOMAIN-KEYWORD,rshb
+  - DOMAIN-KEYWORD,rosbank
+  - DOMAIN-KEYWORD,uralsib
+  - DOMAIN-KEYWORD,akbars
+  - DOMAIN-KEYWORD,sovcombank
+  - DOMAIN-KEYWORD,pochtabank
+  - DOMAIN-KEYWORD,wildberries
+  - DOMAIN-KEYWORD,wbbasket
+  - DOMAIN-KEYWORD,megamarket
+  - DOMAIN-KEYWORD,sbermarket
+  - DOMAIN-KEYWORD,dns-shop
+  - DOMAIN-KEYWORD,vprok
+  - DOMAIN-KEYWORD,samokat
+  - DOMAIN-KEYWORD,vkusvill
+  - DOMAIN-KEYWORD,perekrestok
+  - DOMAIN-KEYWORD,detmir
+  - DOMAIN-KEYWORD,fix-price
+  - DOMAIN-KEYWORD,sportmaster
+  - DOMAIN-KEYWORD,2gis
+  - DOMAIN-KEYWORD,delivery-club
+  - DOMAIN-KEYWORD,dostavista
+  - DOMAIN-KEYWORD,cdek
+  - DOMAIN-KEYWORD,megafon
+  - DOMAIN-KEYWORD,rostelecom
+  - DOMAIN-KEYWORD,amediateka
+  - DOMAIN-KEYWORD,gamexp
+  - DOMAIN-KEYWORD,otkritie
+  - DOMAIN-KEYWORD,bspb

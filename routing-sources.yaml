@@ -1,81 +1,95 @@
 sources:
-  badvpn_youtube_discord:
-    provider: BadVPN-Youtube-Discord
+  badvpn_tiktok_domains:
+    provider: BadVPN-TikTok-Domains
+    owner: local/badvpn-routing
+    format: mrs
+    behavior: domain
+    route: "Выбор сервера"
+    path: rulesets/proxy/tiktok-domains.mrs
+  badvpn_ai_domains:
+    provider: BadVPN-AI-Domains
+    owner: local/badvpn-routing
+    format: mrs
+    behavior: domain
+    route: "👉 VPN"
+    path: rulesets/proxy/ai-domains.mrs
+  badvpn_ai_ip:
+    provider: BadVPN-AI-IP
+    owner: local/badvpn-routing
+    format: mrs
+    behavior: ipcidr
+    route: "👉 VPN"
+    path: rulesets/proxy/ai-ip.mrs
+  badvpn_ai_apps:
+    provider: BadVPN-AI-Apps
     owner: local/badvpn-routing
     format: yaml
     behavior: classical
-    route: "📺 YouTube и Discord"
-    path: rulesets/proxy/youtube-discord.yaml
-  badvpn_ai:
-    provider: BadVPN-AI
-    owner: local/badvpn-routing
-    format: yaml
-    behavior: classical
-    route: "🤖 AI"
-    path: rulesets/proxy/ai.yaml
-  badvpn_gemini:
-    provider: BadVPN-Gemini
-    owner: local/badvpn-routing
-    format: yaml
-    behavior: classical
-    route: "✨ Gemini"
-    path: rulesets/proxy/gemini.yaml
+    route: "👉 VPN"
+    path: rulesets/proxy/ai-apps.yaml
   badvpn_telegram_extra:
     provider: BadVPN-Telegram-Extra
     owner: local/badvpn-routing
-    format: yaml
-    behavior: classical
-    route: "Выбор сервера"
-    path: rulesets/proxy/telegram-extra.yaml
-  badvpn_games_core:
-    provider: BadVPN-Games-Core
+    format: mrs
+    behavior: ipcidr
+    route: "👉 VPN"
+    path: rulesets/proxy/telegram-extra.mrs
+  badvpn_games_core_domains:
+    provider: BadVPN-Games-Core-Domains
+    owner: local/badvpn-routing
+    format: mrs
+    behavior: domain
+    route: "🎮 Игры"
+    path: rulesets/games/games-core-domains.mrs
+  badvpn_games_core_ip:
+    provider: BadVPN-Games-Core-IP
+    owner: local/badvpn-routing
+    format: mrs
+    behavior: ipcidr
+    route: "🎮 Игры"
+    path: rulesets/games/games-core-ip.mrs
+  badvpn_games_core_apps:
+    provider: BadVPN-Games-Core-Apps
     owner: local/badvpn-routing
     format: yaml
     behavior: classical
     route: "🎮 Игры"
-    path: rulesets/games/games-core.yaml
-  badvpn_ru_core:
-    provider: BadVPN-RU-Core
-    owner: local/badvpn-routing
-    format: yaml
-    behavior: classical
-    route: DIRECT
-    path: rulesets/direct/ru-core.yaml
+    path: rulesets/games/games-core-apps.yaml
   badvpn_ru_services:
     provider: BadVPN-RU-Services
     owner: local/badvpn-routing
-    format: yaml
-    behavior: classical
-    route: DIRECT
-    path: rulesets/direct/ru-services.min.yaml
+    format: mrs
+    behavior: domain
+    route: "🇷🇺 РУ сайты"
+    path: rulesets/direct/ru-services.mrs
   badvpn_ru_apps:
     provider: BadVPN-RU-Apps
     owner: local/badvpn-routing
     format: yaml
     behavior: classical
-    route: DIRECT
+    route: "🇷🇺 РУ сайты"
     path: rulesets/direct/ru-apps.min.yaml
   badvpn_ru_asn:
     provider: BadVPN-RU-ASN
     owner: local/badvpn-routing
-    format: yaml
-    behavior: classical
-    route: DIRECT
-    path: rulesets/direct/ru-asn.min.yaml
+    format: mrs
+    behavior: ipcidr
+    route: "🇷🇺 РУ сайты"
+    path: rulesets/direct/ru-asn.mrs
   badvpn_ru_auto:
     provider: BadVPN-RU-Auto
     owner: local/badvpn-routing
-    format: yaml
-    behavior: classical
-    route: DIRECT
-    path: rulesets/direct/ru-auto.min.yaml
+    format: mrs
+    behavior: domain
+    route: "🇷🇺 РУ сайты"
+    path: rulesets/direct/ru-auto.mrs
   badvpn_ru_keywords:
     provider: BadVPN-RU-Keywords
     owner: local/badvpn-routing
     format: yaml
     behavior: classical
-    route: DIRECT
-    path: rulesets/direct/ru-keywords-replacement.min.yaml
+    route: "🇷🇺 РУ сайты"
+    path: rulesets/direct/ru-keywords.yaml
   badvpn_torrents:
     provider: BadVPN-Torrents
     owner: local/badvpn-routing
@@ -83,62 +97,41 @@ sources:
     behavior: classical
     route: DIRECT
     path: rulesets/direct/torrents.yaml
+  badvpn_nemu_whitelist:
+    provider: Nemu-X-WL
+    owner: local/badvpn-routing
+    format: mrs
+    behavior: domain
+    route: "👉 VPN"
+    path: rulesets/proxy/nemu-x-wl.mrs
 
-  nemu_domain_direct_keyword:
-    provider: DOMAIN-DIRECT-KEYWORD
-    owner: Nemu-x/privWL-clash
-    format: yaml
-    behavior: classical
-    route: DIRECT
-    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/domain-direct-keyword.yaml
-  nemu_domain_direct_suffix:
-    provider: DOMAIN-DIRECT-SUFFIX
-    owner: Nemu-x/privWL-clash
-    format: yaml
-    behavior: classical
-    route: DIRECT
-    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/domain-direct-suffix.yaml
   nemu_process_direct_apk:
     provider: PROCESS-DIRECT-APK
     owner: Nemu-x/privWL-clash
     format: yaml
     behavior: classical
-    route: DIRECT
+    route: "🇷🇺 РУ сайты"
     url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/process-direct-apk.yaml
   nemu_process_direct_apk_wildcard:
     provider: PROCESS-DIRECT-APK-WILDCARD
     owner: Nemu-x/privWL-clash
     format: yaml
     behavior: classical
-    route: DIRECT
+    route: "🇷🇺 РУ сайты"
     url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/process-direct-apk-wildcard.yaml
   nemu_process_direct_pc:
     provider: PROCESS-DIRECT-PC
     owner: Nemu-x/privWL-clash
     format: yaml
     behavior: classical
-    route: DIRECT
+    route: "🇷🇺 РУ сайты"
     url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/refs/heads/main/ru/process-direct-pc.yaml
-  nemu_whitelist:
-    provider: Nemu-X-WL
-    owner: Nemu-x/privWL-clash
-    format: yaml
-    behavior: classical
-    route: "Выбор сервера"
-    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/main/clV2_provider.yaml
-  nemu_telegram:
-    provider: Nemu-X-TG
-    owner: Nemu-x/privWL-clash
-    format: yaml
-    behavior: classical
-    route: "Выбор сервера"
-    url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/main/tgprx.yaml
   nemu_apps:
     provider: Nemu-X-APPS
     owner: Nemu-x/privWL-clash
     format: yaml
     behavior: classical
-    route: "Выбор сервера"
+    route: "👉 VPN"
     url: https://raw.githubusercontent.com/Nemu-x/privWL-clash/main/process-core.yaml
 
   hydra_private_domains:
@@ -153,14 +146,14 @@ sources:
     owner: hydraponique/roscomvpn-geosite
     format: mrs
     behavior: domain
-    route: DIRECT
+    route: "🇷🇺 РУ сайты"
     url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/category-ru.mrs
   hydra_whitelist:
     provider: hydra-whitelist
     owner: hydraponique/roscomvpn-geosite
     format: mrs
     behavior: domain
-    route: DIRECT
+    route: "🇷🇺 РУ сайты"
     url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/whitelist.mrs
   hydra_microsoft:
     provider: microsoft
@@ -181,28 +174,28 @@ sources:
     owner: hydraponique/roscomvpn-geosite
     format: mrs
     behavior: domain
-    route: "Выбор сервера"
+    route: "👉 VPN"
     url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/google-play.mrs
   hydra_github:
     provider: github
     owner: hydraponique/roscomvpn-geosite
     format: mrs
     behavior: domain
-    route: "Выбор сервера"
+    route: "👉 VPN"
     url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/github.mrs
   hydra_youtube:
     provider: youtube
     owner: hydraponique/roscomvpn-geosite
     format: mrs
     behavior: domain
-    route: "📺 YouTube и Discord"
+    route: "📺 YouTube"
     url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/youtube.mrs
   hydra_telegram:
     provider: telegram
     owner: hydraponique/roscomvpn-geosite
     format: mrs
     behavior: domain
-    route: "Выбор сервера"
+    route: "👉 VPN"
     url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/telegram.mrs
   hydra_epicgames:
     provider: epicgames
@@ -258,7 +251,7 @@ sources:
     owner: roscomvpn/custom-category
     format: yaml
     behavior: classical
-    route: DIRECT
+    route: "🇷🇺 РУ сайты"
     url: https://raw.githubusercontent.com/roscomvpn/custom-category/release/mihomo/ru-apps.yaml
   hydra_private_ips:
     provider: private-ips
@@ -274,13 +267,20 @@ sources:
     behavior: ipcidr
     route: DIRECT
     url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geoip/release/mihomo/direct.mrs
-  hydra_category_ads:
+  metacubex_ru_ips:
+    provider: ru-ips
+    owner: MetaCubeX/meta-rules-dat
+    format: mrs
+    behavior: ipcidr
+    route: "🇷🇺 РУ сайты"
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/ru.mrs
+  metacubex_category_ads:
     provider: category-ads
-    owner: hydraponique/roscomvpn-geosite
+    owner: MetaCubeX/meta-rules-dat
     format: mrs
     behavior: domain
     route: REJECT
-    url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/category-ads.mrs
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/category-ads-all.mrs
   hydra_win_spy:
     provider: win-spy
     owner: hydraponique/roscomvpn-geosite
@@ -288,6 +288,13 @@ sources:
     behavior: domain
     route: REJECT
     url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/win-spy.mrs
+  metacubex_twitch:
+    provider: twitch
+    owner: MetaCubeX/meta-rules-dat
+    format: mrs
+    behavior: domain
+    route: "🟣 Twitch"
+    url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/twitch.mrs
   hydra_torrent_domains:
     provider: torrent-domains
     owner: hydraponique/roscomvpn-geosite
@@ -295,10 +302,3 @@ sources:
     behavior: domain
     route: DIRECT
     url: https://cdn.jsdelivr.net/gh/hydraponique/roscomvpn-geosite/release/mihomo/torrent.mrs
-  hydra_torrent_clients:
-    provider: torrent-clients
-    owner: legiz-ru/mihomo-rule-sets
-    format: yaml
-    behavior: classical
-    route: DIRECT
-    url: https://raw.githubusercontent.com/legiz-ru/mihomo-rule-sets/main/other/torrent-clients.yaml
