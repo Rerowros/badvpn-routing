@@ -183,6 +183,7 @@ payload:
   - DOMAIN-SUFFIX,ktech.team
   - DOMAIN-SUFFIX,kudago.com
   - DOMAIN-SUFFIX,lamoda.by
+  - DOMAIN-SUFFIX,lamoda.com
   - DOMAIN-SUFFIX,lamoda.kz
   - DOMAIN-SUFFIX,lenta.com
   - DOMAIN-SUFFIX,lenta.tech
@@ -448,6 +449,7 @@ payload:
   - DOMAIN-SUFFIX,vk-cdn.net
   - DOMAIN-SUFFIX,vk-portal.net
   - DOMAIN-SUFFIX,vk.cc
+  - DOMAIN-SUFFIX,vk.cloud
   - DOMAIN-SUFFIX,vk.com
   - DOMAIN-SUFFIX,vk.company
   - DOMAIN-SUFFIX,vk.design
@@ -477,6 +479,7 @@ payload:
   - DOMAIN-SUFFIX,vkuservideo.com
   - DOMAIN-SUFFIX,vkuservideo.net
   - DOMAIN-SUFFIX,vkusvill.tech
+  - DOMAIN-SUFFIX,vkvideo.com
   - DOMAIN-SUFFIX,vkworkspace.kz
   - DOMAIN-SUFFIX,vmailru.net
   - DOMAIN-SUFFIX,vtb-russia.com
@@ -493,6 +496,7 @@ payload:
   - DOMAIN-SUFFIX,wb.kg
   - DOMAIN-SUFFIX,wb.kz
   - DOMAIN-SUFFIX,wbautomation.tech
+  - DOMAIN-SUFFIX,wbbasket.com
   - DOMAIN-SUFFIX,wbcontent.net
   - DOMAIN-SUFFIX,wbr.by
   - DOMAIN-SUFFIX,wbstatic.net
@@ -501,12 +505,14 @@ payload:
   - DOMAIN-SUFFIX,wildberries.am
   - DOMAIN-SUFFIX,wildberries.by
   - DOMAIN-SUFFIX,wildberries.co.il
+  - DOMAIN-SUFFIX,wildberries.com
   - DOMAIN-SUFFIX,wildberries.es
   - DOMAIN-SUFFIX,wildberries.eu
   - DOMAIN-SUFFIX,wildberries.ge
   - DOMAIN-SUFFIX,wildberries.kg
   - DOMAIN-SUFFIX,wildberries.kz
   - DOMAIN-SUFFIX,wildberries.lt
+  - DOMAIN-SUFFIX,wildberries.net
   - DOMAIN-SUFFIX,wildberries.tj
   - DOMAIN-SUFFIX,wildberries.tm
   - DOMAIN-SUFFIX,wildberries.uz
@@ -537,7 +543,7 @@ payload:
   - DOMAIN-SUFFIX,yandex.asia
   - DOMAIN-SUFFIX,yandex.az
   - DOMAIN-SUFFIX,yandex.by
-  - DOMAIN,yandex.cloud
+  - DOMAIN-SUFFIX,yandex.cloud
   - DOMAIN-SUFFIX,yandex.co.il
   - DOMAIN-SUFFIX,yandex.com
   - DOMAIN-SUFFIX,yandex.com.am
@@ -566,6 +572,7 @@ payload:
   - DOMAIN-SUFFIX,yandex.tm
   - DOMAIN-SUFFIX,yandex.tr
   - DOMAIN-SUFFIX,yandex.uz
+  - DOMAIN-SUFFIX,yandexusercontent.com
   - DOMAIN-SUFFIX,yandexwebcache.net
   - DOMAIN-SUFFIX,yango-b2b.com
   - DOMAIN-SUFFIX,yango-team.com
